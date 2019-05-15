@@ -16,5 +16,9 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func numpad(_ sender: UIButton) {
+        debugPrint("Clicking button \(sender.tag)")
+    }
+    
+    
 }
-
