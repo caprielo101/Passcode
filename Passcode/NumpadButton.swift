@@ -21,15 +21,14 @@ class NumpadButton: UIButton {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
-        backgroundColor = UIColor.init(red: 115/256, green: 115/256, blue: 115/256, alpha: 1.0)
-
+        backgroundColor = UIColor.init(r: 115, g: 115, b: 115)
         super.touchesBegan(touches, with: event)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        UIView.animate(withDuration: 0.4,delay: 0, options: .curveEaseInOut, animations: {
-            self.backgroundColor = UIColor.init(red: 61/256, green: 57/256, blue: 63/256, alpha: 1.0)
+        UIView.animate(withDuration: 0.2,delay: 0, options: .curveEaseInOut, animations: {
+            self.backgroundColor = UIColor.init(r: 61, g: 57, b: 63)
         }, completion: nil)
         
         super.touchesEnded(touches, with: event)
@@ -38,8 +37,8 @@ class NumpadButton: UIButton {
     func setupButton() {
         layer.cornerRadius = self.frame.width / 2
         layer.borderColor = nil
-        backgroundColor = UIColor.init(red: 61/256, green: 57/256, blue: 63/256, alpha: 1.0)
-        setTitleColor(UIColor.init(red: 251/256, green: 249/256, blue: 253/256, alpha: 1.0), for: .normal)
+        backgroundColor = UIColor.init(red: 61/255, green: 57/255, blue: 63/255, alpha: 1.0)
+        setTitleColor(UIColor.init(r: 251, g: 249, b: 253), for: .normal)
     }
 
 }

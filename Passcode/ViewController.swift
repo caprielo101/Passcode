@@ -23,6 +23,14 @@ class ViewController: UIViewController {
     
     let answer_of_level1 = ["1", "2", "3", "4"]
     
+    lazy var overlayView: UIView = {
+        let overlay = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        overlay.alpha = 0.5
+        overlay.backgroundColor = .white
+        overlay.isHidden = true
+        return overlay
+    }()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -31,6 +39,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .black
+        
+        //addOverlay
+        view.addSubview(overlayView)
+        
         setupInputs()
         animationChecker()
     }
@@ -76,10 +88,16 @@ class ViewController: UIViewController {
             }
         case 11:
             //RightCheck
-            checkAnswerIfCorrect()
+            let completed = checkAnswerIfCorrect()
             //harus diatur supaya jadi if true or false di method check answer if correct
             if input1.text != nil && input2.text != nil && input3.text != nil && input4.text != nil {
-                setupInputs()
+                if completed {
+                    //animate
+                    print(completed)
+                } else {
+                    setupInputs()
+                    print(completed)
+                }
             } else {
                 //animate
             }
@@ -123,10 +141,10 @@ class ViewController: UIViewController {
     }
     
     func readyToSubmit() {
-        submitButton.backgroundColor = UIColor(red: 76/256, green: 217/256, blue: 100/256, alpha: 1.0)
+        submitButton.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
     }
     
-    func checkAnswerIfCorrect() {
+    func checkAnswerIfCorrect() -> Bool {
         if let input_1 = input1.text {
             if input_1 == answer_of_level1[0] {
                 if let input_2 = input2.text {
@@ -136,23 +154,30 @@ class ViewController: UIViewController {
                                 if let input_4 = input4.text {
                                     if input_4 == answer_of_level1[3] {
                                         print("Benar")
+                                        return true
                                     } else {
                                         print("Check nomor 4 udah salah")
+                                        return false
                                     }
                                 }
                             } else {
                                 print("Check nomor 3 udah salah")
+                                return false
                             }
                         }
                     } else {
                         print("Check nomor 2 udah salah")
+                        return false
                     }
                 }
             } else {
                 print("Check nomor 1 udah salah")
+                return false
             }
         }
+        return false
     }
+    
 }
 
 extension UIView {
