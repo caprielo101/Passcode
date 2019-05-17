@@ -9,7 +9,7 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
-
+    
     let shapeLayer = CAShapeLayer()
     let trackLayer = CAShapeLayer()
     var label = UILabel()
@@ -17,6 +17,15 @@ class LoadingViewController: UIViewController {
     var currentTime: Double = 0
     var timer = Timer()
     var loadingTime:Double = 5.0
+    
+    lazy var overlayView: UIView = {
+        let overlay = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        overlay.alpha = 0.9
+        overlay.backgroundColor = .black
+        overlay.isHidden = false
+        return overlay
+    }()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -24,32 +33,42 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .black
+        //view.backgroundColor = .black
+        
+        view.addSubview(overlayView)
+        view.sendSubviewToBack(overlayView)
         
         let center = view.center
         let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -0.5*CGFloat.pi, endAngle: 1.5*CGFloat.pi, clockwise: true)
         
+        createTrackLayer(circularPath)
+        
+        createShapeLayer(circularPath)
+        
+        createLabel()
+        
+        ShowLoadingOverlay()
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleLoading)))
+    }
+    
+    fileprivate func createTrackLayer(_ circularPath: UIBezierPath) {
         trackLayer.path = circularPath.cgPath
         trackLayer.strokeColor = UIColor.lightGray.cgColor
         trackLayer.lineWidth = 20
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
-        
+        view.layer.addSublayer(trackLayer)
+    }
+    
+    fileprivate func createShapeLayer(_ circularPath: UIBezierPath) {
         shapeLayer.path = circularPath.cgPath
-        
         shapeLayer.strokeColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1.0).cgColor
         shapeLayer.lineWidth = 20
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = .round
-        
         shapeLayer.strokeEnd = 0
-        
-        view.layer.addSublayer(trackLayer)
         view.layer.addSublayer(shapeLayer)
-        createLabel()
-        
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleLoading)))
-
     }
     
     //Creating the label to animate then
@@ -75,20 +94,34 @@ class LoadingViewController: UIViewController {
         label.text = "\(Int(currentTime/loadingTime*100))%"
         if currentTime >= 4.95 {
             shapeLayer.strokeColor = UIColor.init(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0).cgColor
+            view.isUserInteractionEnabled = true
+        } else {
+            view.isUserInteractionEnabled = false
         }
     }
     
     @objc func handleLoading() {
-        debugPrint("Animating")
+        debugPrint("Stopping")
         //animation
+        shapeLayer.removeAnimation(forKey: "loading")
+        KillLoadingOverlay()
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    func ShowLoadingOverlay() {
         startTimer()
         let loading = CABasicAnimation(keyPath: "strokeEnd")
         loading.toValue = 1
         loading.duration = CFTimeInterval(loadingTime)
         loading.fillMode = .forwards
         loading.isRemovedOnCompletion = false
-
-        shapeLayer.add(loading, forKey: nil)
+        
+        shapeLayer.add(loading, forKey: "loading")
+    }
+    
+    func KillLoadingOverlay() {
+        //handle tap 3-5 times
+        timer.invalidate()
     }
 
 }

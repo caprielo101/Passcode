@@ -39,6 +39,7 @@
 		13906E87228E425900E1B397 /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E69228E425900E1B397 /* SF-Pro-Text-SemiboldItalic.otf */; };
 		13906E89228E514600E1B397 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13906E88228E514600E1B397 /* LoadingViewController.swift */; };
 		13906E8B228EF6F300E1B397 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13906E8A228EF6F300E1B397 /* UIColor+Extension.swift */; };
+		13906E91228F00E600E1B397 /* LoadingOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13906E90228F00E600E1B397 /* LoadingOverlayView.swift */; };
 		13A65792228C3E5C009DB3DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A65791228C3E5C009DB3DD /* AppDelegate.swift */; };
 		13A65794228C3E5C009DB3DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A65793228C3E5C009DB3DD /* ViewController.swift */; };
 		13A65797228C3E5C009DB3DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A65795228C3E5C009DB3DD /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		13906E69228E425900E1B397 /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		13906E88228E514600E1B397 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		13906E8A228EF6F300E1B397 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		13906E90228F00E600E1B397 /* LoadingOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlayView.swift; sourceTree = "<group>"; };
 		13A6578E228C3E5C009DB3DD /* Passcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Passcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13A65791228C3E5C009DB3DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13A65793228C3E5C009DB3DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = "SF Pro";
 			sourceTree = "<group>";
 		};
+		13906E92228F130200E1B397 /* Too Hard */ = {
+			isa = PBXGroup;
+			children = (
+				13906E90228F00E600E1B397 /* LoadingOverlayView.swift */,
+			);
+			path = "Too Hard";
+			sourceTree = "<group>";
+		};
 		13A65785228C3E5C009DB3DD = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +171,7 @@
 				13A65793228C3E5C009DB3DD /* ViewController.swift */,
 				13A65795228C3E5C009DB3DD /* Main.storyboard */,
 				13906E88228E514600E1B397 /* LoadingViewController.swift */,
+				13906E92228F130200E1B397 /* Too Hard */,
 				13A657E2228C484E009DB3DD /* NumpadButton.swift */,
 				13A65798228C3E5E009DB3DD /* Assets.xcassets */,
 				13906E4B228E425900E1B397 /* SF Pro */,
@@ -276,6 +287,7 @@
 				13A657E3228C484E009DB3DD /* NumpadButton.swift in Sources */,
 				13A65792228C3E5C009DB3DD /* AppDelegate.swift in Sources */,
 				13906E89228E514600E1B397 /* LoadingViewController.swift in Sources */,
+				13906E91228F00E600E1B397 /* LoadingOverlayView.swift in Sources */,
 				13906E8B228EF6F300E1B397 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,14 +23,6 @@ class ViewController: UIViewController {
     
     let answer_of_level1 = ["1", "2", "3", "4"]
     
-    lazy var overlayView: UIView = {
-        let overlay = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        overlay.alpha = 0.5
-        overlay.backgroundColor = .white
-        overlay.isHidden = true
-        return overlay
-    }()
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -39,9 +31,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .black
-        
-        //addOverlay
-        view.addSubview(overlayView)
         
         setupInputs()
         animationChecker()
@@ -93,6 +82,8 @@ class ViewController: UIViewController {
             if input1.text != nil && input2.text != nil && input3.text != nil && input4.text != nil {
                 if completed {
                     //animate
+                    let presentedLoadingScreen = LoadingViewController()
+                    self.present(presentedLoadingScreen,animated: false, completion: nil)
                     print(completed)
                 } else {
                     setupInputs()
