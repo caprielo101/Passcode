@@ -28,7 +28,7 @@ class NumpadButton: UIButton {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        UIView.animate(withDuration: 0.5,delay: 0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.4,delay: 0, options: .curveEaseInOut, animations: {
             self.backgroundColor = UIColor.init(red: 61/256, green: 57/256, blue: 63/256, alpha: 1.0)
         }, completion: nil)
         

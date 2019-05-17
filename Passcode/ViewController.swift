@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var submitButton: NumpadButton!
     
+    let answer_of_level1 = ["1", "2", "3", "4"]
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -37,9 +39,9 @@ class ViewController: UIViewController {
 
         for input in PasscodeInputs {
             input.textColor = .white
-//            input.backgroundColor = .lightGray
             input.text = nil
             input.addBottomBorder()
+            input.layer.removeAllAnimations()
         }
     }
     
@@ -67,12 +69,21 @@ class ViewController: UIViewController {
         case 0:
             inputChecker(input)
         case 10:
-            setupInputs()
+            if input1.text != nil || input2.text != nil || input3.text != nil || input4.text != nil {
+                setupInputs()
+            } else {
+                debugPrint("Nothing to reset")
+            }
         case 11:
-            print("Checking Answers")
             //RightCheck
+            checkAnswerIfCorrect()
+            //harus diatur supaya jadi if true or false di method check answer if correct
+            if input1.text != nil && input2.text != nil && input3.text != nil && input4.text != nil {
+                setupInputs()
+            } else {
+                //animate
+            }
             
-            //WrongCheck
         default: break
         }
         animationChecker()
@@ -94,7 +105,6 @@ class ViewController: UIViewController {
             readyToSubmit()
         } else {
             //Animate
-
         }
     }
     
@@ -115,9 +125,37 @@ class ViewController: UIViewController {
     func readyToSubmit() {
         submitButton.backgroundColor = UIColor(red: 76/256, green: 217/256, blue: 100/256, alpha: 1.0)
     }
+    
+    func checkAnswerIfCorrect() {
+        if let input_1 = input1.text {
+            if input_1 == answer_of_level1[0] {
+                if let input_2 = input2.text {
+                    if input_2 == answer_of_level1[1] {
+                        if let input_3 = input3.text {
+                            if input_3 == answer_of_level1[2] {
+                                if let input_4 = input4.text {
+                                    if input_4 == answer_of_level1[3] {
+                                        print("Benar")
+                                    } else {
+                                        print("Check nomor 4 udah salah")
+                                    }
+                                }
+                            } else {
+                                print("Check nomor 3 udah salah")
+                            }
+                        }
+                    } else {
+                        print("Check nomor 2 udah salah")
+                    }
+                }
+            } else {
+                print("Check nomor 1 udah salah")
+            }
+        }
+    }
 }
 
-extension UILabel {
+extension UIView {
     
     func addBottomBorder(){
         let bottomLine = CALayer()
