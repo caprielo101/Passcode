@@ -87,10 +87,12 @@ class ViewController: UIViewController {
                     print(completed)
                 } else {
                     setupInputs()
+                    view.shakeAnimate(howMuch: 10, howManyRepeats: 1)
                     print(completed)
                 }
             } else {
                 //animate
+                submitButton.shakeAnimate(howMuch: 5, howManyRepeats: 2)
             }
             
         default: break
@@ -185,11 +187,26 @@ extension UIView {
         flash.duration = 1
         flash.fromValue = 1
         flash.toValue = 0.2
-        flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        flash.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         flash.autoreverses = false
         flash.repeatCount = Float.infinity
         layer.add(flash, forKey: nil)
     }
     
+    func shakeAnimate(howMuch value: CGFloat, howManyRepeats repeatCount: Float) {
+        let shake = CABasicAnimation(keyPath: "position")
+        shake.duration = 0.09
+        shake.repeatCount = repeatCount
+        let fromPoint = CGPoint(x: center.x + value, y: center.y)
+        let toPoint = CGPoint(x: center.x - value, y: center.y)
+        
+        let fromValue = NSValue(cgPoint: fromPoint)
+        let toValue = NSValue(cgPoint: toPoint)
+        
+        shake.fromValue = fromValue
+        shake.toValue = toValue
+        shake.autoreverses = true
+        layer.add(shake, forKey: nil)
+    }
 }
 
