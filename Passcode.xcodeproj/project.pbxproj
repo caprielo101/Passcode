@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13016CE6228FF6190004F9DF /* SwitchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13016CE5228FF6190004F9DF /* SwitchesViewController.swift */; };
+		13016CEC22900B100004F9DF /* BlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13016CEB22900B100004F9DF /* BlackViewController.swift */; };
 		13906E6A228E425900E1B397 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */; };
 		13906E6B228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */; };
 		13906E6C228E425900E1B397 /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13016CE5228FF6190004F9DF /* SwitchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesViewController.swift; sourceTree = "<group>"; };
+		13016CEB22900B100004F9DF /* BlackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackViewController.swift; sourceTree = "<group>"; };
 		13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -140,12 +144,12 @@
 			path = "SF Pro";
 			sourceTree = "<group>";
 		};
-		13906E92228F130200E1B397 /* Too Hard */ = {
+		13906E92228F130200E1B397 /* Too Hard (Not Used Sad Face) */ = {
 			isa = PBXGroup;
 			children = (
 				13906E90228F00E600E1B397 /* LoadingOverlayView.swift */,
 			);
-			path = "Too Hard";
+			path = "Too Hard (Not Used Sad Face)";
 			sourceTree = "<group>";
 		};
 		13A65785228C3E5C009DB3DD = {
@@ -170,9 +174,11 @@
 				13A65791228C3E5C009DB3DD /* AppDelegate.swift */,
 				13A65793228C3E5C009DB3DD /* ViewController.swift */,
 				13A65795228C3E5C009DB3DD /* Main.storyboard */,
+				13016CE5228FF6190004F9DF /* SwitchesViewController.swift */,
+				13016CEB22900B100004F9DF /* BlackViewController.swift */,
 				13906E88228E514600E1B397 /* LoadingViewController.swift */,
-				13906E92228F130200E1B397 /* Too Hard */,
 				13A657E2228C484E009DB3DD /* NumpadButton.swift */,
+				13906E92228F130200E1B397 /* Too Hard (Not Used Sad Face) */,
 				13A65798228C3E5E009DB3DD /* Assets.xcassets */,
 				13906E4B228E425900E1B397 /* SF Pro */,
 				13A6579A228C3E5E009DB3DD /* LaunchScreen.storyboard */,
@@ -283,6 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13016CEC22900B100004F9DF /* BlackViewController.swift in Sources */,
+				13016CE6228FF6190004F9DF /* SwitchesViewController.swift in Sources */,
 				13A65794228C3E5C009DB3DD /* ViewController.swift in Sources */,
 				13A657E3228C484E009DB3DD /* NumpadButton.swift in Sources */,
 				13A65792228C3E5C009DB3DD /* AppDelegate.swift in Sources */,

@@ -86,7 +86,6 @@ class LoadingViewController: UIViewController {
     
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(progressAdding), userInfo: nil, repeats: true)
-        timer.fire()
     }
     
     @objc func progressAdding() {
