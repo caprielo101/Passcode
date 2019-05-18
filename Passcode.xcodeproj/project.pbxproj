@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		13016CE6228FF6190004F9DF /* SwitchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13016CE5228FF6190004F9DF /* SwitchesViewController.swift */; };
 		13016CEC22900B100004F9DF /* BlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13016CEB22900B100004F9DF /* BlackViewController.swift */; };
+		13016CEE229010570004F9DF /* HockeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13016CED229010570004F9DF /* HockeyViewController.swift */; };
+		13016CF02290609D0004F9DF /* CompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13016CEF2290609D0004F9DF /* CompareViewController.swift */; };
 		13906E6A228E425900E1B397 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */; };
 		13906E6B228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */; };
 		13906E6C228E425900E1B397 /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */; };
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		13016CE5228FF6190004F9DF /* SwitchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesViewController.swift; sourceTree = "<group>"; };
 		13016CEB22900B100004F9DF /* BlackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackViewController.swift; sourceTree = "<group>"; };
+		13016CED229010570004F9DF /* HockeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyViewController.swift; sourceTree = "<group>"; };
+		13016CEF2290609D0004F9DF /* CompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewController.swift; sourceTree = "<group>"; };
 		13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				13A65795228C3E5C009DB3DD /* Main.storyboard */,
 				13016CE5228FF6190004F9DF /* SwitchesViewController.swift */,
 				13016CEB22900B100004F9DF /* BlackViewController.swift */,
+				13016CED229010570004F9DF /* HockeyViewController.swift */,
+				13016CEF2290609D0004F9DF /* CompareViewController.swift */,
 				13906E88228E514600E1B397 /* LoadingViewController.swift */,
 				13A657E2228C484E009DB3DD /* NumpadButton.swift */,
 				13906E92228F130200E1B397 /* Too Hard (Not Used Sad Face) */,
@@ -291,8 +297,10 @@
 			files = (
 				13016CEC22900B100004F9DF /* BlackViewController.swift in Sources */,
 				13016CE6228FF6190004F9DF /* SwitchesViewController.swift in Sources */,
+				13016CF02290609D0004F9DF /* CompareViewController.swift in Sources */,
 				13A65794228C3E5C009DB3DD /* ViewController.swift in Sources */,
 				13A657E3228C484E009DB3DD /* NumpadButton.swift in Sources */,
+				13016CEE229010570004F9DF /* HockeyViewController.swift in Sources */,
 				13A65792228C3E5C009DB3DD /* AppDelegate.swift in Sources */,
 				13906E89228E514600E1B397 /* LoadingViewController.swift in Sources */,
 				13906E91228F00E600E1B397 /* LoadingOverlayView.swift in Sources */,

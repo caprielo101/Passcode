@@ -21,8 +21,7 @@ class BlackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        setNeedsUpdateOfHomeIndicatorAutoHidden()
-        setNeedsStatusBarAppearanceUpdate()
+
         
 //        dismissing contains bug, switch is not user interactable. might need to change it to view will appear function
 //        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismiss(animated:completion:))))
