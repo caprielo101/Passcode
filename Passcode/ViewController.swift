@@ -87,12 +87,12 @@ class ViewController: UIViewController {
                     print(completed)
                 } else {
                     setupInputs()
-                    view.shakeAnimate(howMuch: 10, howManyRepeats: 1)
+                    view.shakeAnimate(howMuchX: 10, howManyRepeats: 1)
                     print(completed)
                 }
             } else {
                 //animate
-                submitButton.shakeAnimate(howMuch: 5, howManyRepeats: 2)
+                submitButton.shakeAnimate(howMuchX: 5, howManyRepeats: 2)
             }
             
         default: break
@@ -171,42 +171,5 @@ class ViewController: UIViewController {
         return false
     }
     
-}
-
-extension UIView {
-    
-    func addBottomBorder(){
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect.init(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1)
-        bottomLine.backgroundColor = UIColor.white.cgColor
-        self.layer.addSublayer(bottomLine)
-    }
-    
-    func flashAnimate()  {
-        let flash = CABasicAnimation(keyPath: "opacity")
-        flash.duration = 1
-        flash.fromValue = 1
-        flash.toValue = 0.2
-        flash.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        flash.autoreverses = false
-        flash.repeatCount = Float.infinity
-        layer.add(flash, forKey: nil)
-    }
-    
-    func shakeAnimate(howMuch value: CGFloat, howManyRepeats repeatCount: Float) {
-        let shake = CABasicAnimation(keyPath: "position")
-        shake.duration = 0.09
-        shake.repeatCount = repeatCount
-        let fromPoint = CGPoint(x: center.x + value, y: center.y)
-        let toPoint = CGPoint(x: center.x - value, y: center.y)
-        
-        let fromValue = NSValue(cgPoint: fromPoint)
-        let toValue = NSValue(cgPoint: toPoint)
-        
-        shake.fromValue = fromValue
-        shake.toValue = toValue
-        shake.autoreverses = true
-        layer.add(shake, forKey: nil)
-    }
 }
 

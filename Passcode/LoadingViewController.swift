@@ -18,6 +18,9 @@ class LoadingViewController: UIViewController {
     var timer = Timer()
     var loadingTime:Double = 5.0
     
+    var numberOfTap = 0
+    var tap: UITapGestureRecognizer!
+    
     lazy var overlayView: UIView = {
         let overlay = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         overlay.alpha = 0.9
@@ -25,6 +28,11 @@ class LoadingViewController: UIViewController {
         overlay.isHidden = false
         return overlay
     }()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.shakeAnimate(howMuchX: 5, howManyRepeats: 1)
+
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -49,7 +57,9 @@ class LoadingViewController: UIViewController {
         
         ShowLoadingOverlay()
         
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleLoading)))
+        tap = UITapGestureRecognizer(target: self, action: #selector(handleLoading(_:)))
+        tap.numberOfTapsRequired = 3
+        view.addGestureRecognizer(tap)
     }
     
     fileprivate func createTrackLayer(_ circularPath: UIBezierPath) {
@@ -92,14 +102,14 @@ class LoadingViewController: UIViewController {
         currentTime += 0.05
         label.text = "\(Int(currentTime/loadingTime*100))%"
         if currentTime >= 4.95 {
-            shapeLayer.strokeColor = UIColor.init(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0).cgColor
+            shapeLayer.strokeColor = UIColor.init(r: 76, g: 217, b: 100).cgColor
             view.isUserInteractionEnabled = true
         } else {
             view.isUserInteractionEnabled = false
         }
     }
     
-    @objc func handleLoading() {
+    @objc func handleLoading(_ sender: UITapGestureRecognizer) {
         debugPrint("Stopping")
         //animation
         shapeLayer.removeAnimation(forKey: "loading")

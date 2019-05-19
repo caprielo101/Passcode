@@ -31,11 +31,12 @@ class CompareViewController: UIViewController {
         view.addSubview(label)
         
         circle = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        circle.center = view.center
+//        circle.center = view.center
         circle.backgroundColor = .white
         circle.layer.cornerRadius = circle.frame.height / 2
         circle.translatesAutoresizingMaskIntoConstraints = false
         
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animate)))
         view.addSubview(circle)
         view.addGestureRecognizer(pan)
         
@@ -46,6 +47,23 @@ class CompareViewController: UIViewController {
             myLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         }
 
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        circle.center = view.center
+        circle.transform = CGAffineTransform(scaleX: 1, y: 1)
+    }
+    
+    @objc func animate() {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
+            self.circle.transform = CGAffineTransform(scaleX: 25, y: 25)
+            self.circle.clipsToBounds = true
+        }, completion: { (Bool) in
+//            let vc = LoadingViewController()
+//            self.present(vc, animated: true, completion: nil)
+        })
 
     }
     
@@ -62,11 +80,9 @@ class CompareViewController: UIViewController {
             sender.setTranslation(CGPoint.zero, in: theView)
             if distance == requiredDistance {
                 debugPrint("You won")
-//                UIView.animate(withDuration: 1) {
-//                    self.circle.center = theView.center
-//                }
+                animate()
             }
-        case .ended:
+        case .ended, .cancelled, .failed:
             break
         default:
             break
