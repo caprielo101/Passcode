@@ -18,20 +18,30 @@ class LoadingViewController: UIViewController {
     var timer = Timer()
     var loadingTime:Double = 5.0
     
-    var numberOfTap = 0
     var tap: UITapGestureRecognizer!
     
     lazy var overlayView: UIView = {
         let overlay = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        overlay.alpha = 0.9
+        overlay.alpha = 0.85
         overlay.backgroundColor = .black
         overlay.isHidden = false
         return overlay
     }()
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.shakeAnimate(howMuchX: 5, howManyRepeats: 1)
-
+        let randomShake = Int.random(in: 1...4)
+        switch randomShake {
+        case 1: //shakeLeftRight
+            view.shakeAnimate(howMuchX: 10, howMuchY: 0, howManyRepeats: 2)
+        case 2: //shakeUpDown
+            view.shakeAnimate(howMuchX: 0, howMuchY: 10, howManyRepeats: 2)
+        case 3: //shakeDiagonal14
+            view.shakeAnimate(howMuchX: 8, howMuchY: 8, howManyRepeats: 2)
+        case 4: //shakeDiagonal23
+            view.shakeAnimate(howMuchX: -8, howMuchY: -8, howManyRepeats: 2)
+        default:
+            break
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -57,7 +67,7 @@ class LoadingViewController: UIViewController {
         
         ShowLoadingOverlay()
         
-        tap = UITapGestureRecognizer(target: self, action: #selector(handleLoading(_:)))
+        tap = UITapGestureRecognizer(target: self, action: #selector(handleLoadingStop(_:)))
         tap.numberOfTapsRequired = 3
         view.addGestureRecognizer(tap)
     }
@@ -109,12 +119,17 @@ class LoadingViewController: UIViewController {
         }
     }
     
-    @objc func handleLoading(_ sender: UITapGestureRecognizer) {
+    @objc func handleLoadingStop(_ sender: UITapGestureRecognizer) {
         debugPrint("Stopping")
         //animation
         shapeLayer.removeAnimation(forKey: "loading")
-        KillLoadingOverlay()
-        self.dismiss(animated: false, completion: nil)
+        timer.invalidate()
+        //present the next vc
+//        self.dismiss(animated: false, completion: nil)
+        let nextVC = SwitchesViewController()
+        nextVC.modalTransitionStyle = .crossDissolve
+        nextVC.modalPresentationStyle = .currentContext
+        present(nextVC, animated: true, completion: nil)
     }
     
     func ShowLoadingOverlay() {
@@ -126,11 +141,6 @@ class LoadingViewController: UIViewController {
         loading.isRemovedOnCompletion = false
         
         shapeLayer.add(loading, forKey: "loading")
-    }
-    
-    func KillLoadingOverlay() {
-        //handle tap 3-5 times
-        timer.invalidate()
     }
 
 }

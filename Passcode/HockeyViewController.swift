@@ -10,47 +10,86 @@ import UIKit
 
 class HockeyViewController: UIViewController {
 
-    let initialVector = CGVector.zero
-    var currentVector = CGVector.zero
-    var time: Double = 0
     var circle: UIView!
+    var animator: UIDynamicAnimator!
+    var collision: UICollisionBehavior!
+    var gravity: UIGravityBehavior!
     
-    var circleOrigin: CGPoint!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .black
-
+        
         let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         
         circle = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
         circle.center = view.center
-        circleOrigin = circle.frame.origin
         
         circle.layer.cornerRadius = circle.frame.height / 2
         circle.backgroundColor = .white
-        view.addGestureRecognizer(pan)
+        circle.addGestureRecognizer(pan)
+        animator = UIDynamicAnimator(referenceView: view)
+
         view.addSubview(circle)
+//
+//        gravity = UIGravityBehavior(items: [circle])
+//        animator.addBehavior(gravity)
+        
+        collision = UICollisionBehavior(items: [circle, view])
+        collision.translatesReferenceBoundsIntoBoundary = true
+
+        collision.addBoundary(withIdentifier: "frame" as NSCopying, for: UIBezierPath(rect: view.frame))
+        collision.addBoundary(withIdentifier: "topBounds" as NSCopying, from: CGPoint(x: 0, y: 0), to: CGPoint(x: view.bounds.size.width, y: 0))
+        collision.addBoundary(withIdentifier: "leftBounds" as NSCopying, from: CGPoint(x: 0, y: 0), to: CGPoint(x: 0, y: view.bounds.size.height))
+        collision.addBoundary(withIdentifier: "rightBounds" as NSCopying, from: CGPoint(x: view.bounds.size.width, y: 0), to: CGPoint(x: view.bounds.size.width, y: view.bounds.size.height))
+        collision.addBoundary(withIdentifier: "bottomBounds" as NSCopying, from: CGPoint(x: 0, y: view.bounds.size.height), to: CGPoint(x: view.bounds.size.width, y: view.bounds.size.height))
+        collision.collisionMode = .boundaries
+        animator.addBehavior(collision)
     }
     
-    @objc func handleSwipe(_ sender: UISwipeGestureRecognizer) {
-        
+    func checkBounds(_ myView: UIView) {
+        if myView.center.x > view.frame.width {
+            debugPrint("You gay")
+        } else if myView.center.x < 0 {
+            debugPrint("You left")
+        } else if myView.center.y > view.frame.height {
+            debugPrint("You down")
+        } else if myView.center.y < 0 {
+            debugPrint("You up")
+        }
     }
     
     @objc func handlePan(_ sender: UIPanGestureRecognizer) {
         let theView = sender.view!
-        let translation = sender.translation(in: theView)
-        
+
         switch sender.state {
-        case .began, .changed:
-            circle.center = CGPoint(x: circle.center.x + translation.x, y: circle.center.y + translation.y)
-            sender.setTranslation(CGPoint.zero, in: theView)
+            
+        case .began:
+            animator.removeAllBehaviors()
+            
+        case .changed:
+            let translation = sender.translation(in: theView)
+            theView.center.x += translation.x
+            theView.center.y += translation.y
+            sender.setTranslation(.zero, in: theView)
+            
         case .ended:
-            sender.setTranslation(translation, in: theView)
-            circle.center = CGPoint(x: circle.center.x + translation.x, y: circle.center.y + translation.y)
+            let velocity = sender.velocity(in: theView)
+            let behavior = UIDynamicItemBehavior(items: [theView])
+            behavior.addLinearVelocity(velocity, for: theView)
+            behavior.resistance = 10.0
+            animator.addBehavior(behavior)
+            
+            checkBounds(theView)
         default:
-            break
+            checkBounds(theView)
         }
+ 
+    }
+}
+
+extension HockeyViewController: UICollisionBehaviorDelegate {
+    func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, at p: CGPoint) {
+        print(identifier!)
     }
 }

@@ -11,13 +11,17 @@ import UIKit
 class BlackViewController: UIViewController {
 
     override var prefersHomeIndicatorAutoHidden: Bool {
-        return true
+        return false
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
+    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
+        return .bottom
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black

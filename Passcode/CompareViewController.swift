@@ -15,11 +15,14 @@ class CompareViewController: UIViewController {
     private var label: UILabel!
     
     private let requiredDistance:Int = 1234
+    
+    var pan = UIPanGestureRecognizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         
         label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,8 +38,8 @@ class CompareViewController: UIViewController {
         circle.backgroundColor = .white
         circle.layer.cornerRadius = circle.frame.height / 2
         circle.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animate)))
+        circle.clipsToBounds = true
+//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animate)))
         view.addSubview(circle)
         view.addGestureRecognizer(pan)
         
@@ -54,13 +57,21 @@ class CompareViewController: UIViewController {
         super.viewWillAppear(true)
         circle.center = view.center
         circle.transform = CGAffineTransform(scaleX: 1, y: 1)
+        view.addGestureRecognizer(pan)
     }
     
     @objc func animate() {
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
-            self.circle.transform = CGAffineTransform(scaleX: 25, y: 25)
-            self.circle.clipsToBounds = true
+            self.circle.center = self.circle.center
         }, completion: { (Bool) in
+            UIView.animate(withDuration: 1.5, delay: 2, options: .curveEaseInOut, animations: {
+                self.circle.transform = CGAffineTransform(scaleX: 25, y: 25)
+
+            }, completion: { (Bool) in
+                debugPrint("animating the completion screen")
+                self.view.removeGestureRecognizer(self.pan)
+
+            })
 //            let vc = LoadingViewController()
 //            self.present(vc, animated: true, completion: nil)
         })
@@ -81,6 +92,7 @@ class CompareViewController: UIViewController {
             if distance == requiredDistance {
                 debugPrint("You won")
                 animate()
+                label.text = "\(requiredDistance)"
             }
         case .ended, .cancelled, .failed:
             break

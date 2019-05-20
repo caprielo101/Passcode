@@ -28,12 +28,12 @@ extension UIView {
         layer.add(flash, forKey: nil)
     }
     
-    func shakeAnimate(howMuchX value: CGFloat, howManyRepeats repeatCount: Float) {
+    func shakeAnimate(howMuchX xValue: CGFloat,howMuchY yValue:CGFloat, howManyRepeats repeatCount: Float) {
         let shake = CABasicAnimation(keyPath: "position")
         shake.duration = 0.09
         shake.repeatCount = repeatCount
-        let fromPoint = CGPoint(x: center.x + value, y: center.y)
-        let toPoint = CGPoint(x: center.x - value, y: center.y)
+        let fromPoint = CGPoint(x: center.x + xValue, y: center.y + yValue)
+        let toPoint = CGPoint(x: center.x - xValue, y: center.y - yValue)
         
         let fromValue = NSValue(cgPoint: fromPoint)
         let toValue = NSValue(cgPoint: toPoint)

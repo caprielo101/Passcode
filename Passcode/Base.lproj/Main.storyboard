@@ -228,6 +228,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="InputStackView" destination="fVz-1h-Oh6" id="N4u-UB-uIz"/>
+                        <outlet property="clearButton" destination="LfU-Et-fdt" id="GNg-41-ehj"/>
                         <outlet property="input1" destination="xKs-Sb-mdH" id="zNG-fY-Yqj"/>
                         <outlet property="input2" destination="fnG-AC-oxI" id="y5n-w2-Jst"/>
                         <outlet property="input3" destination="w3h-tb-niO" id="Bsr-fV-Zl5"/>
@@ -237,6 +238,16 @@
                         <outletCollection property="PasscodeInputs" destination="fnG-AC-oxI" collectionClass="NSMutableArray" id="iYT-V6-N2F"/>
                         <outletCollection property="PasscodeInputs" destination="w3h-tb-niO" collectionClass="NSMutableArray" id="Bjz-xI-h73"/>
                         <outletCollection property="PasscodeInputs" destination="12z-hC-cw5" collectionClass="NSMutableArray" id="rMB-UL-LXe"/>
+                        <outletCollection property="numpadButtons" destination="3cd-uz-fQn" collectionClass="NSMutableArray" id="KDJ-HI-8Z1"/>
+                        <outletCollection property="numpadButtons" destination="u86-if-lUb" collectionClass="NSMutableArray" id="OI6-LX-um6"/>
+                        <outletCollection property="numpadButtons" destination="XpM-fc-EWv" collectionClass="NSMutableArray" id="AoZ-6L-qwo"/>
+                        <outletCollection property="numpadButtons" destination="flz-uE-nt4" collectionClass="NSMutableArray" id="XLe-S5-Bnc"/>
+                        <outletCollection property="numpadButtons" destination="EiZ-D2-9fr" collectionClass="NSMutableArray" id="AHY-59-tgo"/>
+                        <outletCollection property="numpadButtons" destination="2Oo-Z0-47x" collectionClass="NSMutableArray" id="71K-mm-cvI"/>
+                        <outletCollection property="numpadButtons" destination="8WT-2Y-kgD" collectionClass="NSMutableArray" id="yHc-ce-ax9"/>
+                        <outletCollection property="numpadButtons" destination="R3z-mN-zuL" collectionClass="NSMutableArray" id="tRq-8a-lIR"/>
+                        <outletCollection property="numpadButtons" destination="pzK-tZ-NJL" collectionClass="NSMutableArray" id="kfB-1y-TMS"/>
+                        <outletCollection property="numpadButtons" destination="eI7-PI-TCh" collectionClass="NSMutableArray" id="2Ct-5w-bbV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -273,6 +284,121 @@
             </objects>
             <point key="canvasLocation" x="808" y="714"/>
         </scene>
+        <!--Random Game View Controller-->
+        <scene sceneID="zpU-tk-O6M">
+            <objects>
+                <viewController id="JOr-kg-o3d" customClass="RandomGameViewController" customModule="Passcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wHM-ED-ous">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Ikf-xc-NiM">
+                                <rect key="frame" x="72" y="125" width="300" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-7I-cZX">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="78"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="mUE-Sy-fBV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="65"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmx-Au-6aw">
+                                        <rect key="frame" x="75" y="0.0" width="75" height="78"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="dO1-t9-ASi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="65"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcg-3Z-6J0">
+                                        <rect key="frame" x="150" y="0.0" width="75" height="78"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="q5n-rz-Qcm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="65"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJO-aX-F0c">
+                                        <rect key="frame" x="225" y="0.0" width="75" height="78"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="Zho-T5-n3n"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="65"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxJ-Uh-YuA">
+                                <rect key="frame" x="32" y="279" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Randomize"/>
+                                <connections>
+                                    <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="ogf-3G-2yW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNW-9n-wlL">
+                                <rect key="frame" x="32" y="317" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Randomize"/>
+                                <connections>
+                                    <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="ORV-NM-e1A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqm-jW-9rt">
+                                <rect key="frame" x="32" y="355" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Randomize"/>
+                                <connections>
+                                    <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="W0x-JL-qB5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrJ-wV-kjX">
+                                <rect key="frame" x="203" y="433" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="JOr-kg-o3d" eventType="touchUpInside" id="e0h-RT-ct8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6d-KP-PmD">
+                                <rect key="frame" x="32" y="393" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Randomize"/>
+                                <connections>
+                                    <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="dJR-gi-6Nq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oMn-Wh-7rg"/>
+                    </view>
+                    <connections>
+                        <outlet property="input1" destination="LFr-7I-cZX" id="Wln-V2-aLd"/>
+                        <outlet property="input2" destination="Tmx-Au-6aw" id="6ns-Sy-nkE"/>
+                        <outlet property="input3" destination="Qcg-3Z-6J0" id="Ycu-uq-8Uh"/>
+                        <outlet property="input4" destination="LJO-aX-F0c" id="erg-xG-xBC"/>
+                        <outlet property="inputStackView" destination="Ikf-xc-NiM" id="vTO-IA-LNi"/>
+                        <outlet property="randomizeButton" destination="PxJ-Uh-YuA" id="EzH-8L-Nsw"/>
+                        <outlet property="randomizeButton2" destination="qNW-9n-wlL" id="eIB-hh-CP5"/>
+                        <outlet property="randomizeButton3" destination="Dqm-jW-9rt" id="VJz-v7-LYy"/>
+                        <outlet property="randomizeButton4" destination="w6d-KP-PmD" id="jNE-A4-bHc"/>
+                        <outlet property="resetButton" destination="BrJ-wV-kjX" id="mLy-D0-QcM"/>
+                        <outletCollection property="inputs" destination="LFr-7I-cZX" collectionClass="NSMutableArray" id="usw-F1-0ab"/>
+                        <outletCollection property="inputs" destination="Tmx-Au-6aw" collectionClass="NSMutableArray" id="YFB-Un-X2v"/>
+                        <outletCollection property="inputs" destination="Qcg-3Z-6J0" collectionClass="NSMutableArray" id="rnD-FI-Gun"/>
+                        <outletCollection property="inputs" destination="LJO-aX-F0c" collectionClass="NSMutableArray" id="OyP-aM-msT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIm-hD-i98" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1739" y="714"/>
+        </scene>
         <!--Loading View Controller-->
         <scene sceneID="psK-7m-JM2">
             <objects>
@@ -296,7 +422,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DARK MODE?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yD-oz-2FR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DARK MODE?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yD-oz-2FR">
                                 <rect key="frame" x="100" y="533.5" width="214" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="17"/>
@@ -306,6 +432,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DlE-N4-wCH"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1yD-oz-2FR"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cB-kv-bnH" userLabel="First Responder" sceneMemberID="firstResponder"/>

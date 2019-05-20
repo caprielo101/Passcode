@@ -20,7 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var InputStackView: UIStackView!
     
     @IBOutlet weak var submitButton: NumpadButton!
-    
+    @IBOutlet weak var clearButton: NumpadButton!
+    @IBOutlet var numpadButtons: [NumpadButton]!
     let answer_of_level1 = ["1", "2", "3", "4"]
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -32,7 +33,12 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .black
         
+        for button in numpadButtons {
+            button.setTitle("", for: .normal)
+        }
+        
         setupInputs()
+        //need observer for the animation checker
         animationChecker()
     }
 
@@ -49,25 +55,7 @@ class ViewController: UIViewController {
     @IBAction func numpad(_ sender: UIButton) {
         let input = sender.tag
         switch input {
-        case 1:
-            inputChecker(input)
-        case 2:
-            inputChecker(input)
-        case 3:
-            inputChecker(input)
-        case 4:
-            inputChecker(input)
-        case 5:
-            inputChecker(input)
-        case 6:
-            inputChecker(input)
-        case 7:
-            inputChecker(input)
-        case 8:
-            inputChecker(input)
-        case 9:
-            inputChecker(input)
-        case 0:
+        case 1, 2, 3, 4, 5, 6, 7, 8, 9, 0:
             inputChecker(input)
         case 10:
             if input1.text != nil || input2.text != nil || input3.text != nil || input4.text != nil {
@@ -83,16 +71,17 @@ class ViewController: UIViewController {
                 if completed {
                     //animate
                     let presentedLoadingScreen = LoadingViewController()
+                    presentedLoadingScreen.modalPresentationStyle = .overCurrentContext
                     self.present(presentedLoadingScreen,animated: false, completion: nil)
                     print(completed)
                 } else {
                     setupInputs()
-                    view.shakeAnimate(howMuchX: 10, howManyRepeats: 1)
+                    view.shakeAnimate(howMuchX: 10,howMuchY: 0, howManyRepeats: 1)
                     print(completed)
                 }
             } else {
                 //animate
-                submitButton.shakeAnimate(howMuchX: 5, howManyRepeats: 2)
+                submitButton.shakeAnimate(howMuchX: 5,howMuchY: 0, howManyRepeats: 2)
             }
             
         default: break
@@ -134,7 +123,7 @@ class ViewController: UIViewController {
     }
     
     func readyToSubmit() {
-        submitButton.backgroundColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1.0)
+        submitButton.backgroundColor = .init(r: 76, g: 217, b: 100)
     }
     
     func checkAnswerIfCorrect() -> Bool {
@@ -150,22 +139,18 @@ class ViewController: UIViewController {
                                         return true
                                     } else {
                                         print("Check nomor 4 udah salah")
-                                        return false
                                     }
                                 }
                             } else {
                                 print("Check nomor 3 udah salah")
-                                return false
                             }
                         }
                     } else {
                         print("Check nomor 2 udah salah")
-                        return false
                     }
                 }
             } else {
                 print("Check nomor 1 udah salah")
-                return false
             }
         }
         return false
