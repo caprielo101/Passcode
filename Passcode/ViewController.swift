@@ -36,12 +36,26 @@ class ViewController: UIViewController {
         for button in numpadButtons {
             button.setTitle("", for: .normal)
         }
-        
+                
         setupInputs()
         //need observer for the animation checker
         animationChecker()
     }
 
+    fileprivate func setupClearAndSubmit() {
+        clearButton.setTitle("", for: .normal)
+        clearButton.transform = CGAffineTransform(rotationAngle: 0)
+        clearButton.contentMode = .center
+        clearButton.setImage(UIImage(named: "refresh.png"), for: .normal)
+        clearButton.backgroundColor = .init(r: 164, g: 164, b: 164)
+        clearButton.tintColor = .init(r: 18, g: 18, b: 18)
+        submitButton.setTitle("", for: .normal)
+        submitButton.contentMode = .center
+        submitButton.setImage(UIImage(named: "chevron.png"), for: .normal)
+        submitButton.tintColor = .white
+        submitButton.backgroundColor = .init(r: 61, g: 57, b: 63)
+    }
+    
     func setupInputs() {
 
         for input in PasscodeInputs {
@@ -50,6 +64,7 @@ class ViewController: UIViewController {
             input.addBottomBorder()
             input.layer.removeAllAnimations()
         }
+        setupClearAndSubmit()
     }
     
     @IBAction func numpad(_ sender: UIButton) {
@@ -63,6 +78,7 @@ class ViewController: UIViewController {
             } else {
                 debugPrint("Nothing to reset")
             }
+            setupClearAndSubmit()
         case 11:
             //RightCheck
             let completed = checkAnswerIfCorrect()
@@ -124,6 +140,7 @@ class ViewController: UIViewController {
     
     func readyToSubmit() {
         submitButton.backgroundColor = .init(r: 76, g: 217, b: 100)
+        submitButton.tintColor = .black
     }
     
     func checkAnswerIfCorrect() -> Bool {

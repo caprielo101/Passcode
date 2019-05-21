@@ -121,8 +121,9 @@
                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfU-Et-fdt" customClass="NumpadButton" customModule="Passcode" customModuleProvider="target">
                                 <rect key="frame" x="20" y="667" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98437827830000002" green="0.97618144750000002" blue="0.99216014149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.64312142133712769" blue="0.64313817024230957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="48"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="C">
                                     <color key="titleColor" red="0.2392711639" green="0.22310692069999999" blue="0.2470619678" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
