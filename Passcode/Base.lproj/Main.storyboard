@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b8O-nI-79f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7ka-7x-fV7">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -79,20 +79,51 @@
             </objects>
             <point key="canvasLocation" x="-1466.6666666666667" y="713.83928571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Pop Up Ads View Controller-->
         <scene sceneID="fd7-7G-x7a">
             <objects>
-                <viewController id="yCb-zX-uvA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PopUpAdsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yCb-zX-uvA" customClass="PopUpAdsViewController" customModule="Passcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="poY-oz-NwS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0F-fA-ZZx">
+                                <rect key="frame" x="20" y="64" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7RQ-4d-wFc"/>
+                                    <constraint firstAttribute="width" constant="44" id="Wsk-nO-Z2D"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="cross"/>
+                                <connections>
+                                    <action selector="dismissPopUpAds:" destination="yCb-zX-uvA" eventType="touchUpInside" id="VGM-73-2GM"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vO-bu-rS2" userLabel="TimeLeft View">
+                                <rect key="frame" x="350" y="64" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="AUL-24-TRf"/>
+                                    <constraint firstAttribute="height" constant="44" id="uy3-NB-XBQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z0F-fA-ZZx" firstAttribute="leading" secondItem="bA1-rK-jNC" secondAttribute="leading" constant="20" id="0xV-ID-qkU"/>
+                            <constraint firstItem="5vO-bu-rS2" firstAttribute="top" secondItem="bA1-rK-jNC" secondAttribute="top" constant="20" id="29T-Ih-Mo2"/>
+                            <constraint firstItem="z0F-fA-ZZx" firstAttribute="top" secondItem="bA1-rK-jNC" secondAttribute="top" constant="20" id="YmM-we-nfF"/>
+                            <constraint firstItem="bA1-rK-jNC" firstAttribute="trailing" secondItem="5vO-bu-rS2" secondAttribute="trailing" constant="20" id="d7G-3o-tmW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bA1-rK-jNC"/>
                     </view>
+                    <connections>
+                        <outlet property="closeButton" destination="z0F-fA-ZZx" id="bWz-iA-BRz"/>
+                        <outlet property="timeLeftView" destination="5vO-bu-rS2" id="Pai-MW-FBe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqn-yr-N3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4" y="714"/>
+            <point key="canvasLocation" x="2499" y="1395"/>
         </scene>
         <!--Compare View Controller-->
         <scene sceneID="xma-k3-FGP">
@@ -600,7 +631,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.98040527105331421" green="0.98036855459213257" blue="0.98039346933364868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="yfY-Y7-HCD" firstAttribute="centerX" secondItem="55F-fX-VSZ" secondAttribute="centerX" id="pIK-x8-LfC"/>
                             <constraint firstItem="yfY-Y7-HCD" firstAttribute="centerY" secondItem="55F-fX-VSZ" secondAttribute="centerY" id="ua8-Ci-DRR"/>
@@ -984,6 +1015,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cross" width="512" height="512"/>
         <image name="play-1" width="1002" height="1002"/>
     </resources>
 </document>

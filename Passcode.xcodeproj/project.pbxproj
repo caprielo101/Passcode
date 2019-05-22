@@ -17,6 +17,7 @@
 		1341B20C2295562100CC7271 /* NumpadWeirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B20B2295562100CC7271 /* NumpadWeirdViewController.swift */; };
 		1341B20E22955ED100CC7271 /* LoadingWeirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */; };
 		1341B210229565AB00CC7271 /* Checkmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B20F229565AB00CC7271 /* Checkmark.swift */; };
+		1341B2122295721E00CC7271 /* PopUpAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B2112295721E00CC7271 /* PopUpAdsViewController.swift */; };
 		13906E6A228E425900E1B397 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */; };
 		13906E6B228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */; };
 		13906E6C228E425900E1B397 /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */; };
@@ -71,6 +72,7 @@
 		1341B20B2295562100CC7271 /* NumpadWeirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadWeirdViewController.swift; sourceTree = "<group>"; };
 		1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingWeirdViewController.swift; sourceTree = "<group>"; };
 		1341B20F229565AB00CC7271 /* Checkmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkmark.swift; sourceTree = "<group>"; };
+		1341B2112295721E00CC7271 /* PopUpAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpAdsViewController.swift; sourceTree = "<group>"; };
 		13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				13016CED229010570004F9DF /* HockeyViewController.swift */,
 				1341B1932293683900CC7271 /* MainMenuViewController.swift */,
 				13016CEF2290609D0004F9DF /* CompareViewController.swift */,
+				1341B2112295721E00CC7271 /* PopUpAdsViewController.swift */,
 				13906E88228E514600E1B397 /* LoadingViewController.swift */,
 				1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */,
 				13A657E2228C484E009DB3DD /* NumpadButton.swift */,
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13BEE7C42291A2A9001DA6EC /* UIView+Extension.swift in Sources */,
+				1341B2122295721E00CC7271 /* PopUpAdsViewController.swift in Sources */,
 				1341B2082295055000CC7271 /* PlayButton.swift in Sources */,
 				13016CEC22900B100004F9DF /* BlackViewController.swift in Sources */,
 				13016CE6228FF6190004F9DF /* SwitchesViewController.swift in Sources */,
