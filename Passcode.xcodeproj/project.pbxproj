@@ -15,6 +15,8 @@
 		1341B2082295055000CC7271 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B2072295055000CC7271 /* PlayButton.swift */; };
 		1341B20A2295527A00CC7271 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B2092295527A00CC7271 /* CircularTransition.swift */; };
 		1341B20C2295562100CC7271 /* NumpadWeirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B20B2295562100CC7271 /* NumpadWeirdViewController.swift */; };
+		1341B20E22955ED100CC7271 /* LoadingWeirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */; };
+		1341B210229565AB00CC7271 /* Checkmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B20F229565AB00CC7271 /* Checkmark.swift */; };
 		13906E6A228E425900E1B397 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */; };
 		13906E6B228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */; };
 		13906E6C228E425900E1B397 /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */; };
@@ -67,6 +69,8 @@
 		1341B2072295055000CC7271 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		1341B2092295527A00CC7271 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		1341B20B2295562100CC7271 /* NumpadWeirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadWeirdViewController.swift; sourceTree = "<group>"; };
+		1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingWeirdViewController.swift; sourceTree = "<group>"; };
+		1341B20F229565AB00CC7271 /* Checkmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkmark.swift; sourceTree = "<group>"; };
 		13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -198,7 +202,9 @@
 				1341B1932293683900CC7271 /* MainMenuViewController.swift */,
 				13016CEF2290609D0004F9DF /* CompareViewController.swift */,
 				13906E88228E514600E1B397 /* LoadingViewController.swift */,
+				1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */,
 				13A657E2228C484E009DB3DD /* NumpadButton.swift */,
+				1341B20F229565AB00CC7271 /* Checkmark.swift */,
 				1341B20B2295562100CC7271 /* NumpadWeirdViewController.swift */,
 				1341B2072295055000CC7271 /* PlayButton.swift */,
 				1341B2092295527A00CC7271 /* CircularTransition.swift */,
@@ -321,12 +327,14 @@
 				13A65794228C3E5C009DB3DD /* ViewController.swift in Sources */,
 				13A657E3228C484E009DB3DD /* NumpadButton.swift in Sources */,
 				13016CEE229010570004F9DF /* HockeyViewController.swift in Sources */,
+				1341B20E22955ED100CC7271 /* LoadingWeirdViewController.swift in Sources */,
 				13BEE7C62291A67C001DA6EC /* RandomGameViewController.swift in Sources */,
 				1341B20C2295562100CC7271 /* NumpadWeirdViewController.swift in Sources */,
 				13A65792228C3E5C009DB3DD /* AppDelegate.swift in Sources */,
 				1341B20A2295527A00CC7271 /* CircularTransition.swift in Sources */,
 				1341B1942293683900CC7271 /* MainMenuViewController.swift in Sources */,
 				13906E89228E514600E1B397 /* LoadingViewController.swift in Sources */,
+				1341B210229565AB00CC7271 /* Checkmark.swift in Sources */,
 				13906E91228F00E600E1B397 /* LoadingOverlayView.swift in Sources */,
 				13906E8B228EF6F300E1B397 /* UIColor+Extension.swift in Sources */,
 			);

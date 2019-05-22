@@ -143,7 +143,7 @@ class MainMenuViewController: UIViewController {
     
     func goToNext() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "NumpadVC")
+        let controller = storyboard.instantiateViewController(withIdentifier: "ViewController")
         controller.modalTransitionStyle = .crossDissolve
         present(controller, animated: true, completion: nil)
     }

@@ -1,15 +1,15 @@
 //
-//  LoadingViewController.swift
+//  LoadingWeirdViewController.swift
 //  Passcode
 //
-//  Created by Josiah Elisha on 17/05/19.
+//  Created by Josiah Elisha on 22/05/19.
 //  Copyright © 2019 Josiah Elisha. All rights reserved.
 //
 
 import UIKit
 
-class LoadingViewController: UIViewController {
-    
+class LoadingWeirdViewController: UIViewController {
+
     let shapeLayer = CAShapeLayer()
     let trackLayer = CAShapeLayer()
     var label = UILabel()
@@ -20,6 +20,8 @@ class LoadingViewController: UIViewController {
     
     var tap: UITapGestureRecognizer!
     
+    let checkmark = Checkmark(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    
     lazy var overlayView: UIView = {
         let overlay = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         overlay.alpha = 0.85
@@ -27,39 +29,47 @@ class LoadingViewController: UIViewController {
         overlay.isHidden = false
         return overlay
     }()
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let randX = CGFloat.random(in: -10...10)
-        let randY = CGFloat.random(in: -10...10)
-        view.shakeAnimate(howMuchX: randX, howMuchY: randY, howManyRepeats: 2)
-}
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        checkmark.animated = true
+        checkmark.animate()
+        super.touchesBegan(touches, with: event)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //view.backgroundColor = .black
-        
         view.addSubview(overlayView)
         view.sendSubviewToBack(overlayView)
         
+        checkmark.alpha = 0
+        label.alpha = 0
+        label.transform = CGAffineTransform(scaleX: 1, y: 1)
         let center = view.center
         let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -0.5*CGFloat.pi, endAngle: 1.5*CGFloat.pi, clockwise: true)
         
         createTrackLayer(circularPath)
-        
+
         createShapeLayer(circularPath)
-        
+
         createLabel()
-        
+
         ShowLoadingOverlay()
         
+        view.isUserInteractionEnabled = false
         tap = UITapGestureRecognizer(target: self, action: #selector(handleLoadingStop(_:)))
-        tap.numberOfTapsRequired = 8
         view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        checkmark.center  = view.center
+        view.addSubview(checkmark)
     }
     
     fileprivate func createTrackLayer(_ circularPath: UIBezierPath) {
@@ -90,7 +100,7 @@ class LoadingViewController: UIViewController {
         label.textAlignment = .center
         label.center = view.center
         label.adjustsFontSizeToFitWidth = true
-//        label.minimumScaleFactor = 0.5
+        //        label.minimumScaleFactor = 0.5
         view.addSubview(label)
     }
     
@@ -99,30 +109,41 @@ class LoadingViewController: UIViewController {
     }
     
     @objc func progressAdding() {
-        currentTime += loadingTime/100
-        label.text = "\(Int(currentTime/loadingTime*100))%"
-        if currentTime >= loadingTime - (loadingTime/100) {
-            shapeLayer.strokeColor = UIColor.init(r: 76, g: 217, b: 100).cgColor
-            view.isUserInteractionEnabled = true
+        if currentTime < loadingTime {
+            currentTime += loadingTime/100
+            label.text = "\(Int(currentTime/loadingTime*100))%"
         } else {
-            view.isUserInteractionEnabled = false
+            currentTime = loadingTime
+            label.text = "\(Int(currentTime/loadingTime*100))%"
+            shapeLayer.strokeColor = UIColor.init(r: 76, g: 217, b: 100).cgColor
+            timer.invalidate()
+            _ = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(handleComplete), userInfo: nil, repeats: false)
         }
+    }
+    
+    func showCheckmark() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            self.label.alpha = 0
+            self.label.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            self.checkmark.alpha = 1
+        }) { (Bool) in
+            self.checkmark.animated = true
+            self.checkmark.animate()
+            self.view.isUserInteractionEnabled = true
+        }
+    }
+    
+    @objc func handleComplete() {
+        showCheckmark()
     }
     
     @objc func handleLoadingStop(_ sender: UITapGestureRecognizer) {
         debugPrint("Stopping")
         //animation
         shapeLayer.removeAnimation(forKey: "loading")
-        timer.invalidate()
         //present the next vc
-//        self.dismiss(animated: false, completion: nil)
-        goToNextVC()
-    }
-    
-    func goToNextVC() {
-        let nextVC = NumpadWeirdViewController()
+        let nextVC = SwitchesViewController()
         nextVC.modalTransitionStyle = .crossDissolve
-        nextVC.modalPresentationStyle = .currentContext
         present(nextVC, animated: true, completion: nil)
     }
     
