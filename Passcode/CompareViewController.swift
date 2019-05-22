@@ -18,9 +18,16 @@ class CompareViewController: UIViewController {
     
     var pan = UIPanGestureRecognizer()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+        
+        setNeedsUpdateOfHomeIndicatorAutoHidden()
+        setNeedsStatusBarAppearanceUpdate()
         
         pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         
@@ -35,14 +42,16 @@ class CompareViewController: UIViewController {
         
         circle = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
 //        circle.center = view.center
+        circle.alpha = 0
         circle.backgroundColor = .white
         circle.layer.cornerRadius = circle.frame.height / 2
         circle.translatesAutoresizingMaskIntoConstraints = false
         circle.clipsToBounds = true
 //        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animate)))
         view.addSubview(circle)
-        view.addGestureRecognizer(pan)
         
+        view.addGestureRecognizer(pan)
+
         if let myLabel = label {
             myLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -150).isActive = true
             myLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
@@ -50,13 +59,15 @@ class CompareViewController: UIViewController {
             myLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         }
 
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         circle.center = view.center
         circle.transform = CGAffineTransform(scaleX: 1, y: 1)
+        UIView.animate(withDuration: 3, delay: 0, options: .curveEaseInOut, animations: {
+            self.circle.alpha = 1
+        }, completion: nil)
         view.addGestureRecognizer(pan)
     }
     
@@ -66,11 +77,12 @@ class CompareViewController: UIViewController {
         }, completion: { (Bool) in
             UIView.animate(withDuration: 1.5, delay: 2, options: .curveEaseInOut, animations: {
                 self.circle.transform = CGAffineTransform(scaleX: 25, y: 25)
+                self.view.removeGestureRecognizer(self.pan)
 
             }, completion: { (Bool) in
                 debugPrint("animating the completion screen")
-                self.view.removeGestureRecognizer(self.pan)
-
+                //animate the vc
+                
             })
 //            let vc = LoadingViewController()
 //            self.present(vc, animated: true, completion: nil)
@@ -107,6 +119,6 @@ extension UIViewController {
 
     func distanceBetween(p1: CGPoint, p2: CGPoint) -> CGFloat {
         return sqrt(pow(p2.x-p1.x,2)+pow(p2.y-p1.y,2))
-
+        
     }
 }

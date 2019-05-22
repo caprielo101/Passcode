@@ -22,6 +22,7 @@ class RandomGameViewController: UIViewController {
     @IBOutlet weak var randomizeButton3: UIButton!
     @IBOutlet weak var randomizeButton4: UIButton!
     @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var submitButton: UIButton!
     
     let answers = [1, 2, 3, 4]
     var temp1 = 0
@@ -30,14 +31,10 @@ class RandomGameViewController: UIViewController {
     var temp4 = 0
     var timer = Timer()
     
-    fileprivate func setupInputs() {
-        for input in inputs {
-            input.text = "0"
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .black
         
         setupInputs()
         setupButtons()
@@ -49,6 +46,14 @@ class RandomGameViewController: UIViewController {
         
 //        animationCheck()
         //setup when opening this vc
+    }
+    
+    fileprivate func setupInputs() {
+        for input in inputs {
+            input.text = "0"
+            input.addBottomBorder()
+            input.textColor = .white
+        }
     }
     
     func animationCheck() {
@@ -78,22 +83,19 @@ class RandomGameViewController: UIViewController {
         case 1:
             temp1 = rng
             input1.text = "\(temp1)"
-            checkInput()
         case 2:
             temp2 = rng
             input2.text = "\(temp2)"
-            checkInput()
         case 3:
             temp3 = rng
             input3.text = "\(temp3)"
-            checkInput()
         case 4:
             temp4 = rng
             input4.text = "\(temp4)"
-            checkInput()
         default:
             break
         }
+        checkInput()
         //done
         debugPrint("clicking button number \(sender.tag)")
     }
@@ -101,13 +103,34 @@ class RandomGameViewController: UIViewController {
     func checkInput() {
         if temp1 == answers[0] {
             randomizeButton.isEnabled = false
-        } else if temp2 == answers[1] {
-            randomizeButton2.isEnabled = false
-        } else if temp3 == answers[2] {
-            randomizeButton3.isEnabled = false
-        } else if temp4 == answers[3] {
-            randomizeButton4.isEnabled = false
+            randomizeButton.backgroundColor = .white
         }
+        if temp2 == answers[1] {
+            randomizeButton2.isEnabled = false
+            randomizeButton2.backgroundColor = .white
+        }
+        if temp3 == answers[2] {
+            randomizeButton3.isEnabled = false
+            randomizeButton3.backgroundColor = .white
+        }
+        if temp4 == answers[3] {
+            randomizeButton4.isEnabled = false
+            randomizeButton4.backgroundColor = .white
+        }
+        setupResetAndSubmit()
+    }
+    
+    fileprivate func setupResetAndSubmit() {
+        resetButton.setTitle("", for: .normal)
+        resetButton.contentMode = .center
+        resetButton.setImage(UIImage(named: "refresh.png"), for: .normal)
+        resetButton.backgroundColor = .init(r: 164, g: 164, b: 164)
+        resetButton.tintColor = .init(r: 18, g: 18, b: 18)
+        submitButton.setTitle("", for: .normal)
+        submitButton.contentMode = .center
+        submitButton.setImage(UIImage(named: "chevron.png"), for: .normal)
+        submitButton.tintColor = .white
+        submitButton.backgroundColor = .init(r: 61, g: 57, b: 63)
     }
     
     func setupButtons() {
@@ -115,13 +138,52 @@ class RandomGameViewController: UIViewController {
         randomizeButton2.isEnabled = true
         randomizeButton3.isEnabled = true
         randomizeButton4.isEnabled = true
+        
+        randomizeButton.setTitle("", for: .normal)
+        randomizeButton2.setTitle("", for: .normal)
+        randomizeButton3.setTitle("", for: .normal)
+        randomizeButton4.setTitle("", for: .normal)
+        
+        setupResetAndSubmit()
+        
     }
     
+    @IBAction func submit(_ sender: UIButton) {
+        if let input_1 = input1.text {
+            if input_1 == "\(answers[0])" {
+                if let input_2 = input2.text {
+                    if input_2 == "\(answers[1])" {
+                        if let input_3 = input3.text {
+                            if input_3 == "\(answers[2])" {
+                                if let input_4 = input4.text {
+                                    if input_4 == "\(answers[3])" {
+                                        print("Won the random game")
+                                        //animate to next VC
+                                        let nextVC = CompareViewController()
+                                        nextVC.modalTransitionStyle = .crossDissolve
+                                        present(nextVC, animated: true, completion: nil)
+                                    } else {
+                                        print("Check nomor 4 udah salah")
+                                    }
+                                }
+                            } else {
+                                print("Check nomor 3 udah salah")
+                            }
+                        }
+                    } else {
+                        print("Check nomor 2 udah salah")
+                    }
+                }
+            } else {
+                print("Check nomor 1 udah salah")
+            }
+        }
+    }
     @IBAction func reset(_ sender: UIButton) {
         //animate
         debugPrint("animating")
         setupButtons()
         setupInputs()
-        timer.invalidate()
+//        timer.invalidate()
     }
 }

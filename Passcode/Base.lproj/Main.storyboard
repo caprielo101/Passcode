@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7ka-7x-fV7">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,19 +21,53 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Main Menu View Controller-->
+        <scene sceneID="LwM-ZR-CqV">
+            <objects>
+                <viewController id="7ka-7x-fV7" customClass="MainMenuViewController" customModule="Passcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L2e-TR-94f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoG-98-qpj" customClass="PlayButton" customModule="Passcode" customModuleProvider="target">
+                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Etd-y9-38f"/>
+                                    <constraint firstAttribute="height" constant="150" id="UKl-N2-rhb"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="play-1"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AoG-98-qpj" firstAttribute="centerX" secondItem="L2e-TR-94f" secondAttribute="centerX" id="MDy-gh-PIb"/>
+                            <constraint firstItem="AoG-98-qpj" firstAttribute="centerY" secondItem="L2e-TR-94f" secondAttribute="centerY" id="fZD-hh-yCj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c33-b1-bZ2"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="AoG-98-qpj" id="baS-CE-O9N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yvj-8A-gdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-683" y="21"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Passcode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NumpadVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Passcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fVz-1h-Oh6">
-                                <rect key="frame" x="30" y="124" width="354" height="78"/>
+                                <rect key="frame" x="30" y="124" width="354" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKs-Sb-mdH">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="78"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="76"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="gem-QU-4kK"/>
                                         </constraints>
@@ -42,7 +76,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnG-AC-oxI">
-                                        <rect key="frame" x="93" y="0.0" width="75" height="78"/>
+                                        <rect key="frame" x="93" y="0.0" width="75" height="76"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="LMY-Yh-mrB"/>
                                         </constraints>
@@ -51,7 +85,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3h-tb-niO">
-                                        <rect key="frame" x="186" y="0.0" width="75" height="78"/>
+                                        <rect key="frame" x="186" y="0.0" width="75" height="76"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="Zci-ch-hor"/>
                                         </constraints>
@@ -60,7 +94,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12z-hC-cw5">
-                                        <rect key="frame" x="279" y="0.0" width="75" height="78"/>
+                                        <rect key="frame" x="279" y="0.0" width="75" height="76"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="7Z5-gF-EWc"/>
                                         </constraints>
@@ -293,9 +327,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Ikf-xc-NiM">
-                                <rect key="frame" x="72" y="125" width="300" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="Ikf-xc-NiM">
+                                <rect key="frame" x="20" y="124" width="374" height="78"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-7I-cZX">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="78"/>
@@ -307,7 +340,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmx-Au-6aw">
-                                        <rect key="frame" x="75" y="0.0" width="75" height="78"/>
+                                        <rect key="frame" x="99.5" y="0.0" width="75" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="dO1-t9-ASi"/>
                                         </constraints>
@@ -316,7 +349,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcg-3Z-6J0">
-                                        <rect key="frame" x="150" y="0.0" width="75" height="78"/>
+                                        <rect key="frame" x="199.5" y="0.0" width="75" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="q5n-rz-Qcm"/>
                                         </constraints>
@@ -325,7 +358,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJO-aX-F0c">
-                                        <rect key="frame" x="225" y="0.0" width="75" height="78"/>
+                                        <rect key="frame" x="299" y="0.0" width="75" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="Zho-T5-n3n"/>
                                         </constraints>
@@ -335,48 +368,93 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxJ-Uh-YuA">
-                                <rect key="frame" x="32" y="279" width="76" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="gMz-DE-hQ1">
+                                <rect key="frame" x="23" y="309" width="369" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Randomize"/>
-                                <connections>
-                                    <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="ogf-3G-2yW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNW-9n-wlL">
-                                <rect key="frame" x="32" y="317" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Randomize"/>
-                                <connections>
-                                    <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="ORV-NM-e1A"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqm-jW-9rt">
-                                <rect key="frame" x="32" y="355" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Randomize"/>
-                                <connections>
-                                    <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="W0x-JL-qB5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrJ-wV-kjX">
-                                <rect key="frame" x="203" y="433" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="reset:" destination="JOr-kg-o3d" eventType="touchUpInside" id="e0h-RT-ct8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6d-KP-PmD">
-                                <rect key="frame" x="32" y="393" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Randomize"/>
-                                <connections>
-                                    <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="dJR-gi-6Nq"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxJ-Uh-YuA" customClass="NumpadButton" customModule="Passcode" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="IqV-6s-lSk"/>
+                                            <constraint firstAttribute="width" constant="75" id="bz4-fb-xhc"/>
+                                        </constraints>
+                                        <state key="normal" title="Randomize"/>
+                                        <connections>
+                                            <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="ogf-3G-2yW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNW-9n-wlL" customClass="NumpadButton" customModule="Passcode" customModuleProvider="target">
+                                        <rect key="frame" x="98" y="0.0" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="j9m-ze-FhE"/>
+                                            <constraint firstAttribute="width" constant="75" id="wF8-5E-99P"/>
+                                        </constraints>
+                                        <state key="normal" title="Randomize"/>
+                                        <connections>
+                                            <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="ORV-NM-e1A"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqm-jW-9rt" customClass="NumpadButton" customModule="Passcode" customModuleProvider="target">
+                                        <rect key="frame" x="196" y="0.0" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="Bq2-1c-Zky"/>
+                                            <constraint firstAttribute="height" constant="75" id="Qdw-bh-2Su"/>
+                                        </constraints>
+                                        <state key="normal" title="Randomize"/>
+                                        <connections>
+                                            <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="W0x-JL-qB5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6d-KP-PmD" customClass="NumpadButton" customModule="Passcode" customModuleProvider="target">
+                                        <rect key="frame" x="294" y="0.0" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="jbH-cW-ZS9"/>
+                                            <constraint firstAttribute="width" constant="75" id="rb9-5G-5Ug"/>
+                                        </constraints>
+                                        <state key="normal" title="Randomize"/>
+                                        <connections>
+                                            <action selector="randomize:" destination="JOr-kg-o3d" eventType="touchUpInside" id="dJR-gi-6Nq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="wOH-ss-4FQ">
+                                <rect key="frame" x="20" y="682" width="374" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrJ-wV-kjX" customClass="NumpadButton" customModule="Passcode" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="SlF-ou-g0l"/>
+                                            <constraint firstAttribute="width" constant="100" id="exM-af-TcK"/>
+                                        </constraints>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="reset:" destination="JOr-kg-o3d" eventType="touchUpInside" id="e0h-RT-ct8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2V-36-bJt" customClass="NumpadButton" customModule="Passcode" customModuleProvider="target">
+                                        <rect key="frame" x="274" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="lA1-7A-3M1"/>
+                                            <constraint firstAttribute="width" constant="100" id="y4k-3B-cz5"/>
+                                        </constraints>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submit:" destination="JOr-kg-o3d" eventType="touchUpInside" id="jWP-eG-Jkw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wOH-ss-4FQ" firstAttribute="leading" secondItem="oMn-Wh-7rg" secondAttribute="leading" constant="20" id="BuU-iH-RMe"/>
+                            <constraint firstItem="oMn-Wh-7rg" firstAttribute="trailing" secondItem="Ikf-xc-NiM" secondAttribute="trailing" constant="20" id="MDj-Ye-gjx"/>
+                            <constraint firstItem="oMn-Wh-7rg" firstAttribute="bottom" secondItem="wOH-ss-4FQ" secondAttribute="bottom" constant="80" id="PCf-Sp-cox"/>
+                            <constraint firstItem="Ikf-xc-NiM" firstAttribute="leading" secondItem="oMn-Wh-7rg" secondAttribute="leading" constant="20" id="PLy-UE-5pr"/>
+                            <constraint firstItem="Ikf-xc-NiM" firstAttribute="top" secondItem="oMn-Wh-7rg" secondAttribute="top" constant="80" id="clz-Zu-fay"/>
+                            <constraint firstAttribute="trailing" secondItem="wOH-ss-4FQ" secondAttribute="trailing" constant="20" id="f4k-NK-m7c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oMn-Wh-7rg"/>
                     </view>
                     <connections>
@@ -390,6 +468,7 @@
                         <outlet property="randomizeButton3" destination="Dqm-jW-9rt" id="VJz-v7-LYy"/>
                         <outlet property="randomizeButton4" destination="w6d-KP-PmD" id="jNE-A4-bHc"/>
                         <outlet property="resetButton" destination="BrJ-wV-kjX" id="mLy-D0-QcM"/>
+                        <outlet property="submitButton" destination="n2V-36-bJt" id="3fo-0u-E6O"/>
                         <outletCollection property="inputs" destination="LFr-7I-cZX" collectionClass="NSMutableArray" id="usw-F1-0ab"/>
                         <outletCollection property="inputs" destination="Tmx-Au-6aw" collectionClass="NSMutableArray" id="YFB-Un-X2v"/>
                         <outletCollection property="inputs" destination="Qcg-3Z-6J0" collectionClass="NSMutableArray" id="rnD-FI-Gun"/>
@@ -398,7 +477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIm-hD-i98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1739" y="714"/>
+            <point key="canvasLocation" x="1737.68115942029" y="713.83928571428567"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="psK-7m-JM2">
@@ -460,4 +539,7 @@
             <point key="canvasLocation" x="2496" y="21"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play-1" width="1002" height="1002"/>
+    </resources>
 </document>

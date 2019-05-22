@@ -31,6 +31,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNotificationObserver()
+        
         view.backgroundColor = .black
         
         for button in numpadButtons {
@@ -42,6 +44,11 @@ class ViewController: UIViewController {
         animationChecker()
     }
 
+    
+    func setupNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
     fileprivate func setupClearAndSubmit() {
         clearButton.setTitle("", for: .normal)
         clearButton.transform = CGAffineTransform(rotationAngle: 0)
@@ -173,5 +180,8 @@ class ViewController: UIViewController {
         return false
     }
     
+    @objc func handleForeground() {
+        animationChecker()
+    }
 }
 

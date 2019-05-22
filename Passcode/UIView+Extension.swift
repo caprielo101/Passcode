@@ -12,7 +12,7 @@ extension UIView {
     
     func addBottomBorder(){
         let bottomLine = CALayer()
-        bottomLine.frame = CGRect.init(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1)
+        bottomLine.frame = CGRect.init(x: 0, y: self.frame.size.height - 2, width: self.frame.size.width, height: 2)
         bottomLine.backgroundColor = UIColor.white.cgColor
         self.layer.addSublayer(bottomLine)
     }

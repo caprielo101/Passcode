@@ -10,9 +10,7 @@ import UIKit
 
 class BlackViewController: UIViewController {
 
-    override var prefersHomeIndicatorAutoHidden: Bool {
-        return false
-    }
+    var timer = Timer()
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -31,4 +29,14 @@ class BlackViewController: UIViewController {
 //        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismiss(animated:completion:))))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        timer = Timer.scheduledTimer(timeInterval: 7, target: self, selector: #selector(handleNextVC), userInfo: nil, repeats: false)
+    }
+    
+    @objc func handleNextVC() {
+        let nextVC = RandomGameViewController()
+        present(nextVC, animated: false, completion: nil)
+    }
 }
