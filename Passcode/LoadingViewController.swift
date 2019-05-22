@@ -120,9 +120,9 @@ class LoadingViewController: UIViewController {
     }
     
     func goToNextVC() {
-        let nextVC = NumpadWeirdViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "NumpadWeirdViewController")
         nextVC.modalTransitionStyle = .crossDissolve
-        nextVC.modalPresentationStyle = .currentContext
         present(nextVC, animated: true, completion: nil)
     }
     

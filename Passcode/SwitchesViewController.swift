@@ -27,7 +27,7 @@ class SwitchesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .init(r: 245, g: 245, b: 245)
+        view.backgroundColor = .init(r: 250, g: 250, b: 250)
         darkModeSwitch.center = view.center
         view.addSubview(darkModeSwitch)
     }
