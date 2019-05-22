@@ -45,7 +45,7 @@ class CompareViewController: UIViewController, UIViewControllerTransitioningDele
         circle = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
 //        circle.center = view.center
         circle.alpha = 0
-        circle.backgroundColor = .white
+        circle.backgroundColor = .init(r: 250, g: 250, b: 250)
         circle.layer.cornerRadius = circle.frame.height / 2
         circle.translatesAutoresizingMaskIntoConstraints = false
         circle.clipsToBounds = true
