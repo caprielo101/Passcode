@@ -81,7 +81,7 @@ class CompareViewController: UIViewController {
 
             }, completion: { (Bool) in
                 debugPrint("animating the completion screen")
-                //animate the vc
+                //animate the vc and present the completion screen
                 
             })
 //            let vc = LoadingViewController()
@@ -98,11 +98,11 @@ class CompareViewController: UIViewController {
         switch sender.state {
         case .began, .changed:
             circle.center = CGPoint(x: circle.center.x + translation.x, y: circle.center.y + translation.y)
-            print(distance)
+            //print(distance)
             label.text = "\(distance)"
             sender.setTranslation(CGPoint.zero, in: theView)
             if distance == requiredDistance {
-                debugPrint("You won")
+                debugPrint("You won the compare game")
                 animate()
                 label.text = "\(requiredDistance)"
             }

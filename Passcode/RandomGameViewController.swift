@@ -31,6 +31,11 @@ class RandomGameViewController: UIViewController {
     var temp4 = 0
     var timer = Timer()
     
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -96,25 +101,25 @@ class RandomGameViewController: UIViewController {
             break
         }
         checkInput()
+        checkIfCorrect()
         //done
-        debugPrint("clicking button number \(sender.tag)")
     }
     
     func checkInput() {
         if temp1 == answers[0] {
-            randomizeButton.isEnabled = false
+//            randomizeButton.isEnabled = false
             randomizeButton.backgroundColor = .white
         }
         if temp2 == answers[1] {
-            randomizeButton2.isEnabled = false
+//            randomizeButton2.isEnabled = false
             randomizeButton2.backgroundColor = .white
         }
         if temp3 == answers[2] {
-            randomizeButton3.isEnabled = false
+//            randomizeButton3.isEnabled = false
             randomizeButton3.backgroundColor = .white
         }
         if temp4 == answers[3] {
-            randomizeButton4.isEnabled = false
+//            randomizeButton4.isEnabled = false
             randomizeButton4.backgroundColor = .white
         }
         setupResetAndSubmit()
@@ -126,6 +131,7 @@ class RandomGameViewController: UIViewController {
         resetButton.setImage(UIImage(named: "refresh.png"), for: .normal)
         resetButton.backgroundColor = .init(r: 164, g: 164, b: 164)
         resetButton.tintColor = .init(r: 18, g: 18, b: 18)
+        
         submitButton.setTitle("", for: .normal)
         submitButton.contentMode = .center
         submitButton.setImage(UIImage(named: "chevron.png"), for: .normal)
@@ -144,8 +150,29 @@ class RandomGameViewController: UIViewController {
         randomizeButton3.setTitle("", for: .normal)
         randomizeButton4.setTitle("", for: .normal)
         
+        randomizeButton.backgroundColor = UIColor.init(r: 61, g: 57, b: 63)
+        randomizeButton2.backgroundColor = UIColor.init(r: 61, g: 57, b: 63)
+        randomizeButton3.backgroundColor = UIColor.init(r: 61, g: 57, b: 63)
+        randomizeButton4.backgroundColor = UIColor.init(r: 61, g: 57, b: 63)
+        
+        temp1 = 0
+        temp2 = 0
+        temp3 = 0
+        temp4 = 0
+        
         setupResetAndSubmit()
         
+    }
+    
+    func checkIfCorrect() {
+        if temp1 == answers[0] && temp2 == answers[1] && temp3 == answers[2] && temp4 == answers[3] {
+            readyToSubmit()
+        }
+    }
+    
+    func readyToSubmit() {
+        submitButton.backgroundColor = .init(r: 76, g: 217, b: 100)
+        submitButton.tintColor = .black
     }
     
     @IBAction func submit(_ sender: UIButton) {
@@ -163,27 +190,31 @@ class RandomGameViewController: UIViewController {
                                         nextVC.modalTransitionStyle = .crossDissolve
                                         present(nextVC, animated: true, completion: nil)
                                     } else {
-                                        print("Check nomor 4 udah salah")
+                                        wrongInputShake(whichLabel: input4)
                                     }
                                 }
                             } else {
-                                print("Check nomor 3 udah salah")
+                                wrongInputShake(whichLabel: input3)
                             }
                         }
                     } else {
-                        print("Check nomor 2 udah salah")
+                        wrongInputShake(whichLabel: input2)
                     }
                 }
             } else {
-                print("Check nomor 1 udah salah")
+                wrongInputShake(whichLabel: input1)
             }
         }
+        
+    }
+    
+    func wrongInputShake(whichLabel label: UILabel){
+        let randX = CGFloat.random(in: 2...10)
+        let randY = CGFloat.random(in: 2...5)
+        label.shakeAnimate(howMuchX: randX, howMuchY: randY, howManyRepeats: 1)
     }
     @IBAction func reset(_ sender: UIButton) {
-        //animate
-        debugPrint("animating")
         setupButtons()
         setupInputs()
-//        timer.invalidate()
     }
 }

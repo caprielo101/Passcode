@@ -9,22 +9,24 @@
 import UIKit
 
 class MainMenuViewController: UIViewController {
-
+    
     @IBOutlet weak var button: PlayButton!
     
     var tap = UITapGestureRecognizer()
     let pulsingLayer = CAShapeLayer()
-    let colors: [UIColor] = [UIColor.white, UIColor.init(r: 255, g: 59, b: 28), UIColor.init(r: 255, g: 149, b: 0), UIColor.init(r: 255, g: 204, b: 0), UIColor.init(r: 76, g: 217, b: 100), UIColor.init(r: 90, g: 200, b: 250), UIColor.init(r: 0, g: 122, b: 255), UIColor.init(r: 88, g: 86, b: 214), UIColor.init(r: 255, g: 25, b: 85), UIColor.white]
-
+    let colors: [UIColor] = [UIColor.init(r: 255, g: 59, b: 28), UIColor.init(r: 255, g: 149, b: 0), UIColor.init(r: 255, g: 204, b: 0), UIColor.init(r: 76, g: 217, b: 100), UIColor.init(r: 90, g: 200, b: 250), UIColor.init(r: 0, g: 122, b: 255), UIColor.init(r: 88, g: 86, b: 214), UIColor.init(r: 255, g: 25, b: 85), UIColor.white]
+    
     let segue = "goToNextVC"
     let animTime: CFTimeInterval = 2.4
-
+    
     var timer = Timer()
+    
+    var index = 0
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +46,7 @@ class MainMenuViewController: UIViewController {
         animateBackLayer()
         
     }
-
+    
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         switch sender.state {
         case .began:
@@ -64,6 +66,8 @@ class MainMenuViewController: UIViewController {
         let rng = Int.random(in: 0...colors.count - 1)
         button.tintColor = self.colors[rng]
         self.pulsingLayer.fillColor = self.colors[rng].cgColor
+        
+        
         //        let rng2 = Int.random(in: 0...colors.count - 1)
         //        self.pulsingLayer.strokeColor = self.colors[rng2].cgColor
     }
@@ -91,8 +95,8 @@ class MainMenuViewController: UIViewController {
         pulsingLayer.position = view.center
         view.layer.addSublayer(pulsingLayer)
     }
-
-
+    
+    
     func animateBackLayer() {
         let scaling = CABasicAnimation(keyPath: "transform.scale")
         scaling.toValue = 2.4
@@ -147,6 +151,6 @@ class MainMenuViewController: UIViewController {
     @objc func waitForSeconds() {
         goToNext()
         debugPrint("gotonextvc")
-
+        
     }
 }

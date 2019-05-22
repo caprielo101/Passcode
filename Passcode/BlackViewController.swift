@@ -36,7 +36,8 @@ class BlackViewController: UIViewController {
     }
     
     @objc func handleNextVC() {
-        let nextVC = RandomGameViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "RandomGameViewController")
         present(nextVC, animated: false, completion: nil)
     }
 }
