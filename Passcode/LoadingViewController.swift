@@ -14,9 +14,9 @@ class LoadingViewController: UIViewController {
     let trackLayer = CAShapeLayer()
     var label = UILabel()
     
-    var currentTime: Double = 0
+    var currentTime: CFTimeInterval = 0
     var timer = Timer()
-    var loadingTime:Double = 5.0
+    var loadingTime:CFTimeInterval = 5.0
     
     var tap: UITapGestureRecognizer!
     
@@ -29,20 +29,10 @@ class LoadingViewController: UIViewController {
     }()
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let randomShake = Int.random(in: 1...4)
-        switch randomShake {
-        case 1: //shakeLeftRight
-            view.shakeAnimate(howMuchX: 10, howMuchY: 0, howManyRepeats: 2)
-        case 2: //shakeUpDown
-            view.shakeAnimate(howMuchX: 0, howMuchY: 10, howManyRepeats: 2)
-        case 3: //shakeDiagonal14
-            view.shakeAnimate(howMuchX: 8, howMuchY: 8, howManyRepeats: 2)
-        case 4: //shakeDiagonal23
-            view.shakeAnimate(howMuchX: -8, howMuchY: -8, howManyRepeats: 2)
-        default:
-            break
-        }
-    }
+        let randX = CGFloat.random(in: -10...10)
+        let randY = CGFloat.random(in: -10...10)
+        view.shakeAnimate(howMuchX: randX, howMuchY: randY, howManyRepeats: 2)
+}
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -68,7 +58,7 @@ class LoadingViewController: UIViewController {
         ShowLoadingOverlay()
         
         tap = UITapGestureRecognizer(target: self, action: #selector(handleLoadingStop(_:)))
-        tap.numberOfTapsRequired = 3
+        tap.numberOfTapsRequired = 8
         view.addGestureRecognizer(tap)
     }
     
@@ -105,13 +95,13 @@ class LoadingViewController: UIViewController {
     }
     
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(progressAdding), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: loadingTime/100, target: self, selector: #selector(progressAdding), userInfo: nil, repeats: true)
     }
     
     @objc func progressAdding() {
-        currentTime += 0.05
+        currentTime += loadingTime/100
         label.text = "\(Int(currentTime/loadingTime*100))%"
-        if currentTime >= 4.95 {
+        if currentTime >= loadingTime - (loadingTime/100) {
             shapeLayer.strokeColor = UIColor.init(r: 76, g: 217, b: 100).cgColor
             view.isUserInteractionEnabled = true
         } else {

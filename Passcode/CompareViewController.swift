@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CompareViewController: UIViewController {
+class CompareViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     private var circle: UIView!
     
@@ -17,6 +17,8 @@ class CompareViewController: UIViewController {
     private let requiredDistance:Int = 1234
     
     var pan = UIPanGestureRecognizer()
+    
+    let transition = CircularTransition()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -76,18 +78,38 @@ class CompareViewController: UIViewController {
             self.circle.center = self.circle.center
         }, completion: { (Bool) in
             UIView.animate(withDuration: 1.5, delay: 2, options: .curveEaseInOut, animations: {
-                self.circle.transform = CGAffineTransform(scaleX: 25, y: 25)
+//                self.circle.transform = CGAffineTransform(scaleX: 25, y: 25)
                 self.view.removeGestureRecognizer(self.pan)
 
             }, completion: { (Bool) in
                 debugPrint("animating the completion screen")
                 //animate the vc and present the completion screen
-                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let nextVC = storyboard.instantiateViewController(withIdentifier: "CompletionViewController")
+                nextVC.transitioningDelegate = self
+                nextVC.modalPresentationStyle = .custom
+                self.present(nextVC, animated: true, completion: nil)
             })
 //            let vc = LoadingViewController()
 //            self.present(vc, animated: true, completion: nil)
         })
 
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = circle.center
+        transition.circleColor = circle.backgroundColor!
+        
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.startingPoint = circle.center
+        transition.circleColor = circle.backgroundColor!
+        
+        return transition
     }
     
     @objc func handlePan(_ sender: UIPanGestureRecognizer) {

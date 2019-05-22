@@ -100,7 +100,7 @@ class RandomGameViewController: UIViewController {
         default:
             break
         }
-//        checkInput()
+        checkInput()
         checkIfCorrect()
         //done
     }

@@ -121,10 +121,10 @@ class MainMenuViewController: UIViewController {
         UIView.animate(withDuration: 0.11, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: .curveEaseIn, animations: {
             self.button.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { (Bool) in
-            UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: .curveLinear, animations: {
+            UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: .curveLinear, animations: {
                 self.button.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
             }, completion: { (Bool) in
-                UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: .curveEaseOut, animations: {
+                UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 15, options: .curveEaseOut, animations: {
                     self.button.transform = CGAffineTransform(scaleX: 1, y: 1)
                     
                 }, completion: { (Bool) in

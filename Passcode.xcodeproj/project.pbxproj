@@ -13,6 +13,7 @@
 		13016CF02290609D0004F9DF /* CompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13016CEF2290609D0004F9DF /* CompareViewController.swift */; };
 		1341B1942293683900CC7271 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B1932293683900CC7271 /* MainMenuViewController.swift */; };
 		1341B2082295055000CC7271 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B2072295055000CC7271 /* PlayButton.swift */; };
+		1341B20A2295527A00CC7271 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B2092295527A00CC7271 /* CircularTransition.swift */; };
 		13906E6A228E425900E1B397 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */; };
 		13906E6B228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */; };
 		13906E6C228E425900E1B397 /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */; };
@@ -63,6 +64,7 @@
 		13016CEF2290609D0004F9DF /* CompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewController.swift; sourceTree = "<group>"; };
 		1341B1932293683900CC7271 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		1341B2072295055000CC7271 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		1341B2092295527A00CC7271 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				13906E88228E514600E1B397 /* LoadingViewController.swift */,
 				13A657E2228C484E009DB3DD /* NumpadButton.swift */,
 				1341B2072295055000CC7271 /* PlayButton.swift */,
+				1341B2092295527A00CC7271 /* CircularTransition.swift */,
 				13906E92228F130200E1B397 /* Too Hard (Not Used Sad Face) */,
 				13A65798228C3E5E009DB3DD /* Assets.xcassets */,
 				13906E4B228E425900E1B397 /* SF Pro */,
@@ -317,6 +320,7 @@
 				13016CEE229010570004F9DF /* HockeyViewController.swift in Sources */,
 				13BEE7C62291A67C001DA6EC /* RandomGameViewController.swift in Sources */,
 				13A65792228C3E5C009DB3DD /* AppDelegate.swift in Sources */,
+				1341B20A2295527A00CC7271 /* CircularTransition.swift in Sources */,
 				1341B1942293683900CC7271 /* MainMenuViewController.swift in Sources */,
 				13906E89228E514600E1B397 /* LoadingViewController.swift in Sources */,
 				13906E91228F00E600E1B397 /* LoadingOverlayView.swift in Sources */,
