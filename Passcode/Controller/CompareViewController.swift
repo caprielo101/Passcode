@@ -77,7 +77,7 @@ class CompareViewController: UIViewController, UIViewControllerTransitioningDele
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
             self.circle.center = self.circle.center
         }, completion: { (Bool) in
-            UIView.animate(withDuration: 1.5, delay: 2, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 4, delay: 0, options: .curveEaseInOut, animations: {
 //                self.circle.transform = CGAffineTransform(scaleX: 25, y: 25)
                 self.view.removeGestureRecognizer(self.pan)
 
@@ -125,8 +125,8 @@ class CompareViewController: UIViewController, UIViewControllerTransitioningDele
             sender.setTranslation(CGPoint.zero, in: theView)
             if distance == requiredDistance {
                 debugPrint("You won the compare game")
-                animate()
                 label.text = "\(requiredDistance)"
+                animate()
             }
         case .ended, .cancelled, .failed:
             break
@@ -135,12 +135,4 @@ class CompareViewController: UIViewController, UIViewControllerTransitioningDele
         }
     }
 
-}
-
-extension UIViewController {
-
-    func distanceBetween(p1: CGPoint, p2: CGPoint) -> CGFloat {
-        return sqrt(pow(p2.x-p1.x,2)+pow(p2.y-p1.y,2))
-        
-    }
 }

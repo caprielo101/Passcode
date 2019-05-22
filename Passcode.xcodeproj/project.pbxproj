@@ -18,6 +18,7 @@
 		1341B20E22955ED100CC7271 /* LoadingWeirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */; };
 		1341B210229565AB00CC7271 /* Checkmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B20F229565AB00CC7271 /* Checkmark.swift */; };
 		1341B2122295721E00CC7271 /* PopUpAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B2112295721E00CC7271 /* PopUpAdsViewController.swift */; };
+		1341B21A2295897E00CC7271 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B2192295897E00CC7271 /* UIViewController+Extension.swift */; };
 		13906E6A228E425900E1B397 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */; };
 		13906E6B228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */; };
 		13906E6C228E425900E1B397 /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */; };
@@ -73,6 +74,7 @@
 		1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingWeirdViewController.swift; sourceTree = "<group>"; };
 		1341B20F229565AB00CC7271 /* Checkmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkmark.swift; sourceTree = "<group>"; };
 		1341B2112295721E00CC7271 /* PopUpAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpAdsViewController.swift; sourceTree = "<group>"; };
+		1341B2192295897E00CC7271 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		13906E4C228E425900E1B397 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		13906E4D228E425900E1B397 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		13906E4E228E425900E1B397 /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -129,6 +131,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1341B215229588B300CC7271 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13A657E2228C484E009DB3DD /* NumpadButton.swift */,
+				1341B20F229565AB00CC7271 /* Checkmark.swift */,
+				1341B2072295055000CC7271 /* PlayButton.swift */,
+				1341B2092295527A00CC7271 /* CircularTransition.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1341B216229588BC00CC7271 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13A65793228C3E5C009DB3DD /* ViewController.swift */,
+				13016CE5228FF6190004F9DF /* SwitchesViewController.swift */,
+				13016CEB22900B100004F9DF /* BlackViewController.swift */,
+				13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */,
+				1341B1932293683900CC7271 /* MainMenuViewController.swift */,
+				13016CEF2290609D0004F9DF /* CompareViewController.swift */,
+				1341B2112295721E00CC7271 /* PopUpAdsViewController.swift */,
+				13906E88228E514600E1B397 /* LoadingViewController.swift */,
+				1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */,
+				1341B20B2295562100CC7271 /* NumpadWeirdViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1341B217229588C700CC7271 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13A65795228C3E5C009DB3DD /* Main.storyboard */,
+				13A6579A228C3E5E009DB3DD /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1341B218229588F600CC7271 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				13BEE7C32291A2A9001DA6EC /* UIView+Extension.swift */,
+				13906E8A228EF6F300E1B397 /* UIColor+Extension.swift */,
+				1341B2192295897E00CC7271 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		13906E4B228E425900E1B397 /* SF Pro */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +218,7 @@
 		13906E92228F130200E1B397 /* Too Hard (Not Used Sad Face) */ = {
 			isa = PBXGroup;
 			children = (
+				13016CED229010570004F9DF /* HockeyViewController.swift */,
 				13906E90228F00E600E1B397 /* LoadingOverlayView.swift */,
 			);
 			path = "Too Hard (Not Used Sad Face)";
@@ -193,30 +243,15 @@
 		13A65790228C3E5C009DB3DD /* Passcode */ = {
 			isa = PBXGroup;
 			children = (
-				13A65791228C3E5C009DB3DD /* AppDelegate.swift */,
-				13A65793228C3E5C009DB3DD /* ViewController.swift */,
-				13A65795228C3E5C009DB3DD /* Main.storyboard */,
-				13016CE5228FF6190004F9DF /* SwitchesViewController.swift */,
-				13016CEB22900B100004F9DF /* BlackViewController.swift */,
-				13BEE7C32291A2A9001DA6EC /* UIView+Extension.swift */,
-				13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */,
-				13016CED229010570004F9DF /* HockeyViewController.swift */,
-				1341B1932293683900CC7271 /* MainMenuViewController.swift */,
-				13016CEF2290609D0004F9DF /* CompareViewController.swift */,
-				1341B2112295721E00CC7271 /* PopUpAdsViewController.swift */,
-				13906E88228E514600E1B397 /* LoadingViewController.swift */,
-				1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */,
-				13A657E2228C484E009DB3DD /* NumpadButton.swift */,
-				1341B20F229565AB00CC7271 /* Checkmark.swift */,
-				1341B20B2295562100CC7271 /* NumpadWeirdViewController.swift */,
-				1341B2072295055000CC7271 /* PlayButton.swift */,
-				1341B2092295527A00CC7271 /* CircularTransition.swift */,
+				1341B218229588F600CC7271 /* Extensions */,
+				1341B217229588C700CC7271 /* View */,
+				1341B216229588BC00CC7271 /* Controller */,
+				1341B215229588B300CC7271 /* Model */,
 				13906E92228F130200E1B397 /* Too Hard (Not Used Sad Face) */,
 				13A65798228C3E5E009DB3DD /* Assets.xcassets */,
-				13906E4B228E425900E1B397 /* SF Pro */,
-				13A6579A228C3E5E009DB3DD /* LaunchScreen.storyboard */,
+				13A65791228C3E5C009DB3DD /* AppDelegate.swift */,
 				13A6579D228C3E5E009DB3DD /* Info.plist */,
-				13906E8A228EF6F300E1B397 /* UIColor+Extension.swift */,
+				13906E4B228E425900E1B397 /* SF Pro */,
 			);
 			path = Passcode;
 			sourceTree = "<group>";
@@ -330,6 +365,7 @@
 				13016CF02290609D0004F9DF /* CompareViewController.swift in Sources */,
 				13A65794228C3E5C009DB3DD /* ViewController.swift in Sources */,
 				13A657E3228C484E009DB3DD /* NumpadButton.swift in Sources */,
+				1341B21A2295897E00CC7271 /* UIViewController+Extension.swift in Sources */,
 				13016CEE229010570004F9DF /* HockeyViewController.swift in Sources */,
 				1341B20E22955ED100CC7271 /* LoadingWeirdViewController.swift in Sources */,
 				13BEE7C62291A67C001DA6EC /* RandomGameViewController.swift in Sources */,

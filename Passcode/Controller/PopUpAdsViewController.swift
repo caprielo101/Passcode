@@ -61,7 +61,6 @@ class PopUpAdsViewController: UIViewController {
     
     fileprivate func createShapeLayer(_ circularPath: UIBezierPath, whichView chosenView: UIView) {
         shapeLayer.path = circularPath.cgPath
-//        shapeLayer.strokeColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1.0).cgColor
 //        shapeLayer.strokeColor = UIColor.init(r: 107, g: 115, b: 120).cgColor
         shapeLayer.strokeColor = UIColor.init(r: 100, g: 107, b: 113).cgColor
         shapeLayer.lineWidth = 10
@@ -84,6 +83,5 @@ class PopUpAdsViewController: UIViewController {
     @IBAction func dismissPopUpAds(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
     
 }
