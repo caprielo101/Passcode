@@ -11,13 +11,18 @@ import UIKit
 class MainMenuViewController: UIViewController {
     
     @IBOutlet weak var button: PlayButton!
+    @IBOutlet weak var gradientView: UIView!
     
     var tap = UITapGestureRecognizer()
     let pulsingLayer = CAShapeLayer()
-    let colors: [UIColor] = [UIColor.init(r: 255, g: 59, b: 28), UIColor.init(r: 255, g: 149, b: 0), UIColor.init(r: 255, g: 204, b: 0), UIColor.init(r: 76, g: 217, b: 100), UIColor.init(r: 90, g: 200, b: 250), UIColor.init(r: 0, g: 122, b: 255), UIColor.init(r: 88, g: 86, b: 214), UIColor.init(r: 255, g: 25, b: 85), UIColor.white]
+    let colors : [UIColor] = [.higRed, .higOrange, .higYellow, .higGreen, .higTeal, .higBlue, .higPurple, .higPink, .white]
     
     let segue = "goToNextVC"
     let animTime: CFTimeInterval = 2.4
+    
+    var animator: UIDynamicAnimator!
+    var gravity: UIGravityBehavior!
+    var collision: UICollisionBehavior!
     
     var timer = Timer()
     
@@ -34,6 +39,21 @@ class MainMenuViewController: UIViewController {
         
         view.backgroundColor = .black
         view.layer.removeAllAnimations()
+//        
+//        let bottom = UIView(frame: CGRect(origin: CGPoint(x: view.frame.width/2, y: view.frame.height), size: CGSize(width: view.frame.width, height: 100)))
+//        bottom.backgroundColor = .higRed
+//        view.addSubview(bottom)
+//        
+//        animator = UIDynamicAnimator(referenceView: view)
+//        gravity = UIGravityBehavior(items: [gradientView])
+//        animator.addBehavior(gravity)
+//        collision = UICollisionBehavior(items: [gradientView, button])
+//        collision.translatesReferenceBoundsIntoBoundary = true
+////        collision.addBoundary(withIdentifier: "bottomBounds" as NSCopying, for: UIBezierPath.init(rect: bottom.frame))
+//        animator.addBehavior(collision)
+        
+        
+        
         
         createPulseLayer()
         
@@ -70,6 +90,10 @@ class MainMenuViewController: UIViewController {
         
         //        let rng2 = Int.random(in: 0...colors.count - 1)
         //        self.pulsingLayer.strokeColor = self.colors[rng2].cgColor
+    }
+    
+    private func setupDynamics() {
+        
     }
     
     private func setupNotificationObservers() {

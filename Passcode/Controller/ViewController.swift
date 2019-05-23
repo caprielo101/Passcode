@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         for button in numpadButtons {
             button.setTitle("", for: .normal)
         }
-                
+        
         setupInputs()
         //need observer for the animation checker
         animationChecker()
@@ -146,7 +146,7 @@ class ViewController: UIViewController {
     }
     
     func readyToSubmit() {
-        submitButton.backgroundColor = .init(r: 76, g: 217, b: 100)
+        submitButton.backgroundColor = .higGreen
         submitButton.tintColor = .black
     }
     

@@ -38,7 +38,7 @@ class CompareViewController: UIViewController, UIViewControllerTransitioningDele
         label.text = "0"
         label.textColor = .white
         label.sizeToFit()
-        label.font = UIFont.init(name: "SF Pro Display", size: 40)
+        label.font = UIFont.init(name: "SF Pro Display", size: 50)
         label.textAlignment = .center
         view.addSubview(label)
         

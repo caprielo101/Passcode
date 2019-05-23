@@ -38,6 +38,6 @@ class PlayButton: UIButton {
 
     func setupButton() {
         self.layer.cornerRadius = self.frame.height/2
-
+        self.clipsToBounds = true
     }
 }

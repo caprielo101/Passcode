@@ -20,7 +20,7 @@ class SwitchesViewController: UIViewController {
         mySwitch.transform = CGAffineTransform(scaleX: 3, y: 3);
         mySwitch.isOn = false
         mySwitch.isUserInteractionEnabled = true
-        mySwitch.onTintColor = UIColor.init(r: 90, g: 200, b: 250)
+        mySwitch.onTintColor = .higTeal
         mySwitch.addTarget(self, action: #selector(handleToggle), for: .valueChanged)
         return mySwitch
     }()

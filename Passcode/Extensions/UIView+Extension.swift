@@ -10,6 +10,12 @@ import UIKit
 
 extension UIView {
     
+    func setCornerRadius(_ amount:CGFloat) {
+        self.layer.cornerRadius = amount
+        self.layer.masksToBounds = true
+        self.clipsToBounds = true
+    }
+    
     func addBottomBorder(){
         let bottomLine = CALayer()
         bottomLine.frame = CGRect.init(x: 0, y: self.frame.size.height - 2, width: self.frame.size.width, height: 2)

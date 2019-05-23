@@ -39,16 +39,27 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="play-1"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8h-pI-Zte" customClass="GradientView" customModule="Passcode" customModuleProvider="target">
+                                <rect key="frame" x="80" y="124" width="254" height="125"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="ohC-RZ-Ats"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="l8h-pI-Zte" firstAttribute="top" secondItem="c33-b1-bZ2" secondAttribute="top" constant="80" id="2P3-Mo-rXc"/>
                             <constraint firstItem="AoG-98-qpj" firstAttribute="centerX" secondItem="L2e-TR-94f" secondAttribute="centerX" id="MDy-gh-PIb"/>
                             <constraint firstItem="AoG-98-qpj" firstAttribute="centerY" secondItem="L2e-TR-94f" secondAttribute="centerY" id="fZD-hh-yCj"/>
+                            <constraint firstItem="l8h-pI-Zte" firstAttribute="leading" secondItem="c33-b1-bZ2" secondAttribute="leading" constant="80" id="phT-2a-n06"/>
+                            <constraint firstItem="c33-b1-bZ2" firstAttribute="trailing" secondItem="l8h-pI-Zte" secondAttribute="trailing" constant="80" id="zyg-Me-G9n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c33-b1-bZ2"/>
                     </view>
                     <connections>
                         <outlet property="button" destination="AoG-98-qpj" id="baS-CE-O9N"/>
+                        <outlet property="gradientView" destination="l8h-pI-Zte" id="NqW-x4-LKw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvj-8A-gdV" userLabel="First Responder" sceneMemberID="firstResponder"/>

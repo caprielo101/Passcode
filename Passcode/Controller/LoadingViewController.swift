@@ -73,7 +73,7 @@ class LoadingViewController: UIViewController {
     
     fileprivate func createShapeLayer(_ circularPath: UIBezierPath) {
         shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1.0).cgColor
+        shapeLayer.strokeColor = UIColor.higRed.cgColor
         shapeLayer.lineWidth = 20
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = .round
@@ -102,7 +102,7 @@ class LoadingViewController: UIViewController {
         currentTime += loadingTime/100
         label.text = "\(Int(currentTime/loadingTime*100))%"
         if currentTime >= loadingTime - (loadingTime/100) {
-            shapeLayer.strokeColor = UIColor.init(r: 76, g: 217, b: 100).cgColor
+            shapeLayer.strokeColor = UIColor.higGreen.cgColor
             view.isUserInteractionEnabled = true
         } else {
             view.isUserInteractionEnabled = false

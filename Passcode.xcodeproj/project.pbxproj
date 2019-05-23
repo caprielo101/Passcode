@@ -58,6 +58,7 @@
 		13A65799228C3E5E009DB3DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13A65798228C3E5E009DB3DD /* Assets.xcassets */; };
 		13A6579C228C3E5E009DB3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A6579A228C3E5E009DB3DD /* LaunchScreen.storyboard */; };
 		13A657E3228C484E009DB3DD /* NumpadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A657E2228C484E009DB3DD /* NumpadButton.swift */; };
+		13B45BA622965458004C71CF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B45BA522965458004C71CF /* GradientView.swift */; };
 		13BEE7C42291A2A9001DA6EC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEE7C32291A2A9001DA6EC /* UIView+Extension.swift */; };
 		13BEE7C62291A67C001DA6EC /* RandomGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */; };
 /* End PBXBuildFile section */
@@ -116,6 +117,7 @@
 		13A6579B228C3E5E009DB3DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13A6579D228C3E5E009DB3DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13A657E2228C484E009DB3DD /* NumpadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadButton.swift; sourceTree = "<group>"; };
+		13B45BA522965458004C71CF /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		13BEE7C32291A2A9001DA6EC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 		1341B215229588B300CC7271 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				13B45BA522965458004C71CF /* GradientView.swift */,
 				13A657E2228C484E009DB3DD /* NumpadButton.swift */,
 				1341B20F229565AB00CC7271 /* Checkmark.swift */,
 				1341B2072295055000CC7271 /* PlayButton.swift */,
@@ -368,6 +371,7 @@
 				1341B21A2295897E00CC7271 /* UIViewController+Extension.swift in Sources */,
 				13016CEE229010570004F9DF /* HockeyViewController.swift in Sources */,
 				1341B20E22955ED100CC7271 /* LoadingWeirdViewController.swift in Sources */,
+				13B45BA622965458004C71CF /* GradientView.swift in Sources */,
 				13BEE7C62291A67C001DA6EC /* RandomGameViewController.swift in Sources */,
 				1341B20C2295562100CC7271 /* NumpadWeirdViewController.swift in Sources */,
 				13A65792228C3E5C009DB3DD /* AppDelegate.swift in Sources */,
@@ -529,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.josiahelisha.Passcode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.josiahelisha.Passcode1234;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -547,7 +551,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.josiahelisha.Passcode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.josiahelisha.Passcode1234;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

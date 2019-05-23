@@ -152,7 +152,7 @@ class NumpadWeirdViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "PopUpAdsViewController")
         present(nextVC, animated: true, completion: nil)
-        submitButton.backgroundColor = .init(r: 76, g: 217, b: 100)
+        submitButton.backgroundColor = .higGreen
         submitButton.tintColor = .black
     }
     
