@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class MainMenuViewController: UIViewController {
     
@@ -70,6 +71,9 @@ class MainMenuViewController: UIViewController {
             animatePlayButtonBegan()
         case .ended:
             animatePlayButtonEnd()
+           // 'Pop' feedback (strong boom)
+            let pop = SystemSoundID(1520)
+            AudioServicesPlaySystemSound(pop)
         default:
             return
         }
