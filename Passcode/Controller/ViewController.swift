@@ -41,10 +41,14 @@ class ViewController: UIViewController {
         }
         
         setupInputs()
-        //need observer for the animation checker
-        animationChecker()
+        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        animationChecker()
+    }
     
     func setupNotificationObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
