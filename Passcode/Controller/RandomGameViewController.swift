@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class RandomGameViewController: UIViewController {
     
@@ -102,25 +103,26 @@ class RandomGameViewController: UIViewController {
         }
         checkInput()
         checkIfCorrect()
+        AudioServicesPlaySystemSound(1104)
         //done
     }
     
     func checkInput() {
         if temp1 == answers[0] {
 //            randomizeButton.isEnabled = false
-            randomizeButton.backgroundColor = .white
+            randomizeButton.backgroundColor = .init(r: 250, g: 250, b: 250)
         }
         if temp2 == answers[1] {
 //            randomizeButton2.isEnabled = false
-            randomizeButton2.backgroundColor = .white
+            randomizeButton2.backgroundColor = .init(r: 250, g: 250, b: 250)
         }
         if temp3 == answers[2] {
 //            randomizeButton3.isEnabled = false
-            randomizeButton3.backgroundColor = .white
+            randomizeButton3.backgroundColor = .init(r: 250, g: 250, b: 250)
         }
         if temp4 == answers[3] {
 //            randomizeButton4.isEnabled = false
-            randomizeButton4.backgroundColor = .white
+            randomizeButton4.backgroundColor = .init(r: 250, g: 250, b: 250)
         }
         setupResetAndSubmit()
     }
@@ -186,6 +188,7 @@ class RandomGameViewController: UIViewController {
                                     if input_4 == "\(answers[3])" {
                                         print("Won the random game")
                                         //animate to next VC
+                                        AudioServicesPlaySystemSound(1104)
                                         let nextVC = CompareViewController()
                                         nextVC.modalTransitionStyle = .crossDissolve
                                         present(nextVC, animated: true, completion: nil)
@@ -211,10 +214,14 @@ class RandomGameViewController: UIViewController {
     func wrongInputShake(whichLabel label: UILabel){
         let randX = CGFloat.random(in: 2...10)
         let randY = CGFloat.random(in: 2...5)
+        let generator = UINotificationFeedbackGenerator()
         label.shakeAnimate(howMuchX: randX, howMuchY: randY, howManyRepeats: 1)
+        generator.notificationOccurred(.error)
     }
+    
     @IBAction func reset(_ sender: UIButton) {
         setupButtons()
         setupInputs()
+        AudioServicesPlaySystemSound(1104)
     }
 }

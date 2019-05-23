@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
 
@@ -79,12 +80,16 @@ class ViewController: UIViewController {
         switch input {
         case 1, 2, 3, 4, 5, 6, 7, 8, 9, 0:
             inputChecker(input)
+            //Play click sound from sound library
+            AudioServicesPlaySystemSound(1104)
         case 10:
             if input1.text != nil || input2.text != nil || input3.text != nil || input4.text != nil {
                 setupInputs()
             } else {
                 debugPrint("Nothing to reset")
             }
+            //Play click sound from sound library
+            AudioServicesPlaySystemSound(1104)
             setupClearAndSubmit()
         case 11:
             //RightCheck
@@ -96,19 +101,25 @@ class ViewController: UIViewController {
                     let presentedLoadingScreen = LoadingViewController()
                     presentedLoadingScreen.modalPresentationStyle = .overCurrentContext
                     self.present(presentedLoadingScreen,animated: false, completion: nil)
+                    //Play click sound from sound library
+                    AudioServicesPlaySystemSound(1104)
                     print(completed)
                 } else {
                     setupInputs()
                     view.shakeAnimate(howMuchX: 10,howMuchY: 0, howManyRepeats: 1)
+                    let generator = UINotificationFeedbackGenerator()
+                    generator.notificationOccurred(.error)
                     print(completed)
                 }
             } else {
                 //animate
                 submitButton.shakeAnimate(howMuchX: 5,howMuchY: 0, howManyRepeats: 2)
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.error)
             }
-            
         default: break
         }
+        
         animationChecker()
     }
     

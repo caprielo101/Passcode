@@ -58,7 +58,7 @@ class GradientView: UIView {
         // Create a label and add it as a subview
         label = UILabel(frame: self.bounds)
         label.text = "1234"
-        label.font = UIFont(name: "SF Pro Display", size: 100)
+        label.font = UIFont(name: "SF Pro Display", size: 120)
         label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .center
         self.addSubview(label)

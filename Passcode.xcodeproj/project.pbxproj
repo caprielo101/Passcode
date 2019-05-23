@@ -148,16 +148,16 @@
 		1341B216229588BC00CC7271 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1341B1932293683900CC7271 /* MainMenuViewController.swift */,
 				13A65793228C3E5C009DB3DD /* ViewController.swift */,
+				13906E88228E514600E1B397 /* LoadingViewController.swift */,
+				1341B20B2295562100CC7271 /* NumpadWeirdViewController.swift */,
+				1341B2112295721E00CC7271 /* PopUpAdsViewController.swift */,
+				1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */,
 				13016CE5228FF6190004F9DF /* SwitchesViewController.swift */,
 				13016CEB22900B100004F9DF /* BlackViewController.swift */,
 				13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */,
-				1341B1932293683900CC7271 /* MainMenuViewController.swift */,
 				13016CEF2290609D0004F9DF /* CompareViewController.swift */,
-				1341B2112295721E00CC7271 /* PopUpAdsViewController.swift */,
-				13906E88228E514600E1B397 /* LoadingViewController.swift */,
-				1341B20D22955ED100CC7271 /* LoadingWeirdViewController.swift */,
-				1341B20B2295562100CC7271 /* NumpadWeirdViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

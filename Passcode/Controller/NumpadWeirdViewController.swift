@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class NumpadWeirdViewController: UIViewController {
 
@@ -54,8 +55,10 @@ class NumpadWeirdViewController: UIViewController {
         clearButton.transform = CGAffineTransform(rotationAngle: 0)
         clearButton.contentMode = .center
         clearButton.setImage(UIImage(named: "refresh.png"), for: .normal)
-        clearButton.backgroundColor = .init(r: 164, g: 164, b: 164)
+        clearButton.backgroundColor = .init(r: 115, g: 115, b: 115)
         clearButton.tintColor = .init(r: 18, g: 18, b: 18)
+        clearButton.isEnabled = false
+        
         submitButton.setTitle("", for: .normal)
         submitButton.contentMode = .center
         submitButton.setImage(UIImage(named: "chevron.png"), for: .normal)
@@ -79,12 +82,16 @@ class NumpadWeirdViewController: UIViewController {
         switch input {
         case 1, 2, 3, 4, 5, 6, 7, 8, 9, 0:
             inputChecker(input)
+            //Play click sound from sound library
+            AudioServicesPlaySystemSound(1104)
         case 10:
             if input1.text != nil || input2.text != nil || input3.text != nil || input4.text != nil {
                 setupInputs()
             } else {
                 debugPrint("Nothing to reset")
             }
+            //Play click sound from sound library
+            AudioServicesPlaySystemSound(1104)
             setupClearAndSubmit()
         case 11:
             //RightCheck
@@ -98,19 +105,26 @@ class NumpadWeirdViewController: UIViewController {
                     let presentedLoadingScreen = LoadingWeirdViewController()
                     presentedLoadingScreen.modalPresentationStyle = .overCurrentContext
                     self.present(presentedLoadingScreen,animated: false, completion: nil)
+                    //Play click sound from sound library
+                    AudioServicesPlaySystemSound(1104)
                     print(completed)
                 } else {
                     setupInputs()
                     view.shakeAnimate(howMuchX: 10,howMuchY: 0, howManyRepeats: 1)
                     print(completed)
+                    let generator = UINotificationFeedbackGenerator()
+                    generator.notificationOccurred(.error)
                 }
             } else {
                 //animate
                 submitButton.shakeAnimate(howMuchX: 5,howMuchY: 0, howManyRepeats: 2)
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.error)
             }
             
         default: break
         }
+
         animationChecker()
     }
     
@@ -154,6 +168,9 @@ class NumpadWeirdViewController: UIViewController {
         present(nextVC, animated: true, completion: nil)
         submitButton.backgroundColor = .higGreen
         submitButton.tintColor = .black
+        clearButton.isEnabled = true
+        clearButton.backgroundColor = .init(r: 164, g: 164, b: 164)
+        clearButton.tintColor = .init(r: 18, g: 18, b: 18)
     }
     
     func checkAnswerIfCorrect() -> Bool {

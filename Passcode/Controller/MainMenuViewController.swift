@@ -11,7 +11,7 @@ import UIKit
 class MainMenuViewController: UIViewController {
     
     @IBOutlet weak var button: PlayButton!
-    @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var gradientView: GradientView!
     
     var tap = UITapGestureRecognizer()
     let pulsingLayer = CAShapeLayer()
@@ -52,16 +52,13 @@ class MainMenuViewController: UIViewController {
 ////        collision.addBoundary(withIdentifier: "bottomBounds" as NSCopying, for: UIBezierPath.init(rect: bottom.frame))
 //        animator.addBehavior(collision)
         
-        
-        
-        
         createPulseLayer()
         
         view.bringSubviewToFront(button)
         tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         button.addGestureRecognizer(tap)
         
-        startRandomColorTimer()
+//        startRandomColorTimer()
         
         animateBackLayer()
         
@@ -87,15 +84,10 @@ class MainMenuViewController: UIViewController {
         button.tintColor = self.colors[rng]
         self.pulsingLayer.fillColor = self.colors[rng].cgColor
         
-        
         //        let rng2 = Int.random(in: 0...colors.count - 1)
         //        self.pulsingLayer.strokeColor = self.colors[rng2].cgColor
     }
-    
-    private func setupDynamics() {
-        
-    }
-    
+
     private func setupNotificationObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
@@ -105,6 +97,7 @@ class MainMenuViewController: UIViewController {
         timer.invalidate()
         animateBackLayer()
         startRandomColorTimer()
+        gradientView.setupGradient()
     }
     
     fileprivate func createPulseLayer() {
@@ -116,7 +109,7 @@ class MainMenuViewController: UIViewController {
         //        pulsingLayer.lineWidth = 10
         pulsingLayer.fillColor = UIColor.white.cgColor
         pulsingLayer.lineCap = .round
-        pulsingLayer.position = view.center
+        pulsingLayer.position = button.center
         view.layer.addSublayer(pulsingLayer)
     }
     
@@ -146,7 +139,7 @@ class MainMenuViewController: UIViewController {
             self.button.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { (Bool) in
             UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: .curveLinear, animations: {
-                self.button.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                self.button.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
             }, completion: { (Bool) in
                 UIView.animate(withDuration: 0.12, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 15, options: .curveEaseOut, animations: {
                     self.button.transform = CGAffineTransform(scaleX: 1, y: 1)

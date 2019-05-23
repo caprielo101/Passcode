@@ -24,12 +24,22 @@ class CompareViewController: UIViewController, UIViewControllerTransitioningDele
         return .lightContent
     }
     
+    private func setupNotificationObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc func handleForeground() {
+        view.addGestureRecognizer(pan)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         
         setNeedsUpdateOfHomeIndicatorAutoHidden()
         setNeedsStatusBarAppearanceUpdate()
+        
+        setupNotificationObservers()
         
         pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         
@@ -73,27 +83,22 @@ class CompareViewController: UIViewController, UIViewControllerTransitioningDele
         view.addGestureRecognizer(pan)
     }
     
-    @objc func animate() {
-        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
+    func animate() {
+        _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(handleCompletion), userInfo: nil, repeats: false)
+    }
+    
+    @objc func handleCompletion() {
+        UIView.animate(withDuration: 0.5, delay: 4, options: .curveEaseInOut, animations: {
             self.circle.center = self.circle.center
         }, completion: { (Bool) in
-            UIView.animate(withDuration: 4, delay: 0, options: .curveEaseInOut, animations: {
-//                self.circle.transform = CGAffineTransform(scaleX: 25, y: 25)
-                self.view.removeGestureRecognizer(self.pan)
-
-            }, completion: { (Bool) in
-                debugPrint("animating the completion screen")
-                //animate the vc and present the completion screen
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let nextVC = storyboard.instantiateViewController(withIdentifier: "CompletionViewController")
-                nextVC.transitioningDelegate = self
-                nextVC.modalPresentationStyle = .custom
-                self.present(nextVC, animated: true, completion: nil)
-            })
-//            let vc = LoadingViewController()
-//            self.present(vc, animated: true, completion: nil)
+            debugPrint("animating the completion screen")
+            //animate the vc and present the completion screen
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextVC = storyboard.instantiateViewController(withIdentifier: "CompletionViewController")
+            nextVC.transitioningDelegate = self
+            nextVC.modalPresentationStyle = .custom
+            self.present(nextVC, animated: true, completion: nil)
         })
-
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -124,8 +129,12 @@ class CompareViewController: UIViewController, UIViewControllerTransitioningDele
             label.text = "\(distance)"
             sender.setTranslation(CGPoint.zero, in: theView)
             if distance == requiredDistance {
+                let generator = UIImpactFeedbackGenerator(style: .light)
+                generator.prepare()
+                generator.impactOccurred()
                 debugPrint("You won the compare game")
                 label.text = "\(requiredDistance)"
+                view.removeGestureRecognizer(pan)
                 animate()
             }
         case .ended, .cancelled, .failed:
