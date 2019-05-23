@@ -60,7 +60,6 @@
 		13A657E3228C484E009DB3DD /* NumpadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A657E2228C484E009DB3DD /* NumpadButton.swift */; };
 		13BEE7C42291A2A9001DA6EC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEE7C32291A2A9001DA6EC /* UIView+Extension.swift */; };
 		13BEE7C62291A67C001DA6EC /* RandomGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */; };
-		13DCB0CF2295908D001F387B /* NumpadLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DCB0CE2295908D001F387B /* NumpadLevelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,7 +118,6 @@
 		13A657E2228C484E009DB3DD /* NumpadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadButton.swift; sourceTree = "<group>"; };
 		13BEE7C32291A2A9001DA6EC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGameViewController.swift; sourceTree = "<group>"; };
-		13DCB0CE2295908D001F387B /* NumpadLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadLevelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,7 +243,6 @@
 		13A65790228C3E5C009DB3DD /* Passcode */ = {
 			isa = PBXGroup;
 			children = (
-				13DCB0CE2295908D001F387B /* NumpadLevelViewController.swift */,
 				1341B218229588F600CC7271 /* Extensions */,
 				1341B217229588C700CC7271 /* View */,
 				1341B216229588BC00CC7271 /* Controller */,
@@ -380,7 +377,6 @@
 				1341B210229565AB00CC7271 /* Checkmark.swift in Sources */,
 				13906E91228F00E600E1B397 /* LoadingOverlayView.swift in Sources */,
 				13906E8B228EF6F300E1B397 /* UIColor+Extension.swift in Sources */,
-				13DCB0CF2295908D001F387B /* NumpadLevelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
