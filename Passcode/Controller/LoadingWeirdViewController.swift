@@ -74,7 +74,7 @@ class LoadingWeirdViewController: UIViewController {
     
     fileprivate func createTrackLayer(_ circularPath: UIBezierPath) {
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
+        trackLayer.strokeColor = UIColor.init(white: 4/5, alpha: 1).cgColor
         trackLayer.lineWidth = 20
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
@@ -144,6 +144,9 @@ class LoadingWeirdViewController: UIViewController {
         //present the next vc
         let nextVC = SwitchesViewController()
         nextVC.modalTransitionStyle = .crossDissolve
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.prepare()
+        generator.impactOccurred()
         present(nextVC, animated: true, completion: nil)
     }
     

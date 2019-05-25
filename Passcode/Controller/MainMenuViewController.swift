@@ -100,7 +100,7 @@ class MainMenuViewController: UIViewController {
         view.layer.removeAllAnimations()
         timer.invalidate()
         animateBackLayer()
-        startRandomColorTimer()
+//        startRandomColorTimer()
         gradientView.setupGradient()
     }
     

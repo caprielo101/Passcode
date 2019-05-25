@@ -19,7 +19,7 @@ class LoadingViewController: UIViewController {
     var loadingTime:CFTimeInterval = 5.0
     
     var tap: UITapGestureRecognizer!
-    
+
     lazy var overlayView: UIView = {
         let overlay = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         overlay.alpha = 0.85
@@ -32,7 +32,7 @@ class LoadingViewController: UIViewController {
         let randX = CGFloat.random(in: -10...10)
         let randY = CGFloat.random(in: -10...10)
         view.shakeAnimate(howMuchX: randX, howMuchY: randY, howManyRepeats: 2)
-}
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -56,7 +56,7 @@ class LoadingViewController: UIViewController {
         createLabel()
         
         ShowLoadingOverlay()
-        
+
         tap = UITapGestureRecognizer(target: self, action: #selector(handleLoadingStop(_:)))
         tap.numberOfTapsRequired = 8
         view.addGestureRecognizer(tap)
@@ -64,7 +64,7 @@ class LoadingViewController: UIViewController {
     
     fileprivate func createTrackLayer(_ circularPath: UIBezierPath) {
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
+        trackLayer.strokeColor = UIColor.init(white: 4/5, alpha: 1).cgColor
         trackLayer.lineWidth = 20
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
@@ -116,6 +116,9 @@ class LoadingViewController: UIViewController {
         timer.invalidate()
         //present the next vc
 //        self.dismiss(animated: false, completion: nil)
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.prepare()
+        generator.impactOccurred()
         goToNextVC()
     }
     
