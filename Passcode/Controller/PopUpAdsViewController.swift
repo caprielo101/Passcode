@@ -88,7 +88,7 @@ class PopUpAdsViewController: UIViewController {
     fileprivate func createShapeLayer(_ circularPath: UIBezierPath, whichView chosenView: UIView) {
         shapeLayer.path = circularPath.cgPath
 //        shapeLayer.strokeColor = UIColor.init(r: 100, g: 107, b: 113).cgColor
-        shapeLayer.strokeColor = UIColor.init(r: 120, g: 127, b: 133).cgColor
+        shapeLayer.strokeColor = UIColor.init(r: 125, g: 132, b: 138).cgColor
         shapeLayer.lineWidth = 10
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = .butt
