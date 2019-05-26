@@ -60,6 +60,7 @@
                     <connections>
                         <outlet property="button" destination="AoG-98-qpj" id="baS-CE-O9N"/>
                         <outlet property="gradientView" destination="l8h-pI-Zte" id="NqW-x4-LKw"/>
+                        <segue destination="cqQ-56-gq7" kind="show" identifier="goToFirstNumpad" id="xMi-yc-5ev"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvj-8A-gdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -134,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqn-yr-N3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2499" y="1395"/>
+            <point key="canvasLocation" x="867" y="1413"/>
         </scene>
         <!--Compare View Controller-->
         <scene sceneID="xma-k3-FGP">
@@ -146,10 +147,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0n5-gg-cDh"/>
                     </view>
+                    <connections>
+                        <segue destination="3ps-2p-Aq5" kind="custom" identifier="goToComplete" id="9JI-66-zsX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dB-pt-DlN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="714"/>
+            <point key="canvasLocation" x="3397" y="-26"/>
         </scene>
         <!--Random Game View Controller-->
         <scene sceneID="zpU-tk-O6M">
@@ -307,11 +311,12 @@
                         <outletCollection property="inputs" destination="Tmx-Au-6aw" collectionClass="NSMutableArray" id="YFB-Un-X2v"/>
                         <outletCollection property="inputs" destination="Qcg-3Z-6J0" collectionClass="NSMutableArray" id="rnD-FI-Gun"/>
                         <outletCollection property="inputs" destination="LJO-aX-F0c" collectionClass="NSMutableArray" id="OyP-aM-msT"/>
+                        <segue destination="vWa-Ne-eVA" kind="presentation" identifier="goToCompare" animates="NO" id="tu2-Ke-3uE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIm-hD-i98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688" y="706"/>
+            <point key="canvasLocation" x="2496" y="714"/>
         </scene>
         <!--Numpad 2 View Controller-->
         <scene sceneID="oS2-HL-5Cg">
@@ -606,11 +611,13 @@
                         <outletCollection property="numpadButtons" destination="9MU-Vt-3MF" collectionClass="NSMutableArray" id="nZ1-o2-EaI"/>
                         <outletCollection property="numpadButtons" destination="HBf-he-V0d" collectionClass="NSMutableArray" id="Hdl-Uf-gr7"/>
                         <outletCollection property="numpadButtons" destination="KH6-ns-1RQ" collectionClass="NSMutableArray" id="SfM-ud-yVB"/>
+                        <segue destination="yCb-zX-uvA" kind="presentation" identifier="goToPopUp" id="Izd-x4-zSE"/>
+                        <segue destination="X1d-5B-CBm" kind="presentation" identifier="goToSecondLoading" animates="NO" modalPresentationStyle="overCurrentContext" id="UKC-Pb-Qbh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1HE-eC-eOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2499" y="704"/>
+            <point key="canvasLocation" x="867" y="714"/>
         </scene>
         <!--Loading Weird View Controller-->
         <scene sceneID="9Ag-eK-sIh">
@@ -622,10 +629,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Oki-YF-QN9"/>
                     </view>
+                    <connections>
+                        <segue destination="Igk-io-x79" kind="presentation" identifier="goToSwitches" modalTransitionStyle="crossDissolve" id="tlz-Oa-k6C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atz-Hx-b3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3242" y="704"/>
+            <point key="canvasLocation" x="1642" y="714"/>
         </scene>
         <!--Completion View Controller-->
         <scene sceneID="8z6-eb-sY6">
@@ -636,7 +646,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😂👍" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfY-Y7-HCD">
-                                <rect key="frame" x="57" y="358" width="300" height="180"/>
+                                <rect key="frame" x="57" y="358.5" width="300" height="179.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="150"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -652,7 +662,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijy-wg-nSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4007" y="704"/>
+            <point key="canvasLocation" x="3396" y="714"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="psK-7m-JM2">
@@ -664,6 +674,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ge7-D3-8ql"/>
                     </view>
+                    <connections>
+                        <segue destination="b8O-nI-79f" kind="presentation" identifier="goToSecondNumpad" modalTransitionStyle="crossDissolve" id="tIf-Ck-QqV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obb-5h-u2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -693,6 +706,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="nyT-pS-qby" kind="presentation" identifier="goToBlack" animates="NO" id="bKa-Nz-jve"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cB-kv-bnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -708,15 +724,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SYe-NC-XAU"/>
                     </view>
+                    <connections>
+                        <segue destination="JOr-kg-o3d" kind="presentation" identifier="goToRandom" modalTransitionStyle="crossDissolve" id="o9c-jr-i2n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkP-hH-MAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2496" y="21"/>
         </scene>
-        <!--View Controller-->
+        <!--Numpad View Controller-->
         <scene sceneID="ans-L1-FOE">
             <objects>
-                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cqQ-56-gq7" customClass="ViewController" customModule="Passcode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cqQ-56-gq7" customClass="NumpadViewController" customModule="Passcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U6D-xX-YKw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1018,6 +1037,7 @@
                         <outletCollection property="PasscodeInputs" destination="JiN-Ys-dku" collectionClass="NSMutableArray" id="hWH-PG-4xp"/>
                         <outletCollection property="PasscodeInputs" destination="5Lh-4W-Pgf" collectionClass="NSMutableArray" id="qPm-AD-gah"/>
                         <outletCollection property="PasscodeInputs" destination="Ya1-lT-ssz" collectionClass="NSMutableArray" id="Ngf-1Y-ww9"/>
+                        <segue destination="MaC-vp-rG5" kind="presentation" identifier="goToFirstLoading" modalPresentationStyle="overCurrentContext" id="Kc3-07-eYw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsx-iB-vuu" userLabel="First Responder" sceneMemberID="firstResponder"/>

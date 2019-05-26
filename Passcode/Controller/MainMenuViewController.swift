@@ -163,8 +163,10 @@ class MainMenuViewController: UIViewController {
     }
     
     func goToNext() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "ViewController")
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "ViewController")
+//  controller.modalTransitionStyle = .crossDissolve
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! NumpadViewController
         controller.modalTransitionStyle = .crossDissolve
         present(controller, animated: true, completion: nil)
     }

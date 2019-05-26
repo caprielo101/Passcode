@@ -11,6 +11,8 @@
 		13016CEC22900B100004F9DF /* BlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13016CEB22900B100004F9DF /* BlackViewController.swift */; };
 		13016CEE229010570004F9DF /* HockeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13016CED229010570004F9DF /* HockeyViewController.swift */; };
 		13016CF02290609D0004F9DF /* CompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13016CEF2290609D0004F9DF /* CompareViewController.swift */; };
+		1312A69A229AC442005B3407 /* forest.mov in Resources */ = {isa = PBXBuildFile; fileRef = 1312A699229AC442005B3407 /* forest.mov */; };
+		1312A69C229AC7B8005B3407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1312A69B229AC7B8005B3407 /* ViewController.swift */; };
 		1341B1942293683900CC7271 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B1932293683900CC7271 /* MainMenuViewController.swift */; };
 		1341B2082295055000CC7271 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B2072295055000CC7271 /* PlayButton.swift */; };
 		1341B20A2295527A00CC7271 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1341B2092295527A00CC7271 /* CircularTransition.swift */; };
@@ -53,7 +55,6 @@
 		13906E8B228EF6F300E1B397 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13906E8A228EF6F300E1B397 /* UIColor+Extension.swift */; };
 		13906E91228F00E600E1B397 /* LoadingOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13906E90228F00E600E1B397 /* LoadingOverlayView.swift */; };
 		13A65792228C3E5C009DB3DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A65791228C3E5C009DB3DD /* AppDelegate.swift */; };
-		13A65794228C3E5C009DB3DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A65793228C3E5C009DB3DD /* ViewController.swift */; };
 		13A65797228C3E5C009DB3DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A65795228C3E5C009DB3DD /* Main.storyboard */; };
 		13A65799228C3E5E009DB3DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13A65798228C3E5E009DB3DD /* Assets.xcassets */; };
 		13A6579C228C3E5E009DB3DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A6579A228C3E5E009DB3DD /* LaunchScreen.storyboard */; };
@@ -61,6 +62,7 @@
 		13B45BA622965458004C71CF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B45BA522965458004C71CF /* GradientView.swift */; };
 		13BEE7C42291A2A9001DA6EC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEE7C32291A2A9001DA6EC /* UIView+Extension.swift */; };
 		13BEE7C62291A67C001DA6EC /* RandomGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */; };
+		13C281F52299897200326D18 /* NumpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C281F42299897200326D18 /* NumpadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		13016CEB22900B100004F9DF /* BlackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackViewController.swift; sourceTree = "<group>"; };
 		13016CED229010570004F9DF /* HockeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HockeyViewController.swift; sourceTree = "<group>"; };
 		13016CEF2290609D0004F9DF /* CompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewController.swift; sourceTree = "<group>"; };
+		1312A699229AC442005B3407 /* forest.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = forest.mov; sourceTree = "<group>"; };
+		1312A69B229AC7B8005B3407 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1341B1932293683900CC7271 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		1341B2072295055000CC7271 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		1341B2092295527A00CC7271 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
@@ -111,7 +115,6 @@
 		13906E90228F00E600E1B397 /* LoadingOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlayView.swift; sourceTree = "<group>"; };
 		13A6578E228C3E5C009DB3DD /* Passcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Passcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13A65791228C3E5C009DB3DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13A65793228C3E5C009DB3DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		13A65796228C3E5C009DB3DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13A65798228C3E5E009DB3DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13A6579B228C3E5E009DB3DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		13B45BA522965458004C71CF /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		13BEE7C32291A2A9001DA6EC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGameViewController.swift; sourceTree = "<group>"; };
+		13C281F42299897200326D18 /* NumpadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				1341B1932293683900CC7271 /* MainMenuViewController.swift */,
-				13A65793228C3E5C009DB3DD /* ViewController.swift */,
+				13C281F42299897200326D18 /* NumpadViewController.swift */,
 				13906E88228E514600E1B397 /* LoadingViewController.swift */,
 				1341B20B2295562100CC7271 /* NumpadWeirdViewController.swift */,
 				1341B2112295721E00CC7271 /* PopUpAdsViewController.swift */,
@@ -246,6 +250,7 @@
 		13A65790228C3E5C009DB3DD /* Passcode */ = {
 			isa = PBXGroup;
 			children = (
+				1312A69B229AC7B8005B3407 /* ViewController.swift */,
 				1341B218229588F600CC7271 /* Extensions */,
 				1341B217229588C700CC7271 /* View */,
 				1341B216229588BC00CC7271 /* Controller */,
@@ -254,6 +259,7 @@
 				13A65798228C3E5E009DB3DD /* Assets.xcassets */,
 				13A65791228C3E5C009DB3DD /* AppDelegate.swift */,
 				13A6579D228C3E5E009DB3DD /* Info.plist */,
+				1312A699229AC442005B3407 /* forest.mov */,
 				13906E4B228E425900E1B397 /* SF Pro */,
 			);
 			path = Passcode;
@@ -346,6 +352,7 @@
 				13906E86228E425900E1B397 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				13906E71228E425900E1B397 /* SF-Pro-Display-Bold.otf in Resources */,
 				13906E6C228E425900E1B397 /* SF-Pro-Text-Heavy.otf in Resources */,
+				1312A69A229AC442005B3407 /* forest.mov in Resources */,
 				13906E79228E425900E1B397 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				13906E75228E425900E1B397 /* SF-Pro-Display-Semibold.otf in Resources */,
 				13906E7B228E425900E1B397 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
@@ -364,9 +371,9 @@
 				1341B2122295721E00CC7271 /* PopUpAdsViewController.swift in Sources */,
 				1341B2082295055000CC7271 /* PlayButton.swift in Sources */,
 				13016CEC22900B100004F9DF /* BlackViewController.swift in Sources */,
+				1312A69C229AC7B8005B3407 /* ViewController.swift in Sources */,
 				13016CE6228FF6190004F9DF /* SwitchesViewController.swift in Sources */,
 				13016CF02290609D0004F9DF /* CompareViewController.swift in Sources */,
-				13A65794228C3E5C009DB3DD /* ViewController.swift in Sources */,
 				13A657E3228C484E009DB3DD /* NumpadButton.swift in Sources */,
 				1341B21A2295897E00CC7271 /* UIViewController+Extension.swift in Sources */,
 				13016CEE229010570004F9DF /* HockeyViewController.swift in Sources */,
@@ -377,6 +384,7 @@
 				13A65792228C3E5C009DB3DD /* AppDelegate.swift in Sources */,
 				1341B20A2295527A00CC7271 /* CircularTransition.swift in Sources */,
 				1341B1942293683900CC7271 /* MainMenuViewController.swift in Sources */,
+				13C281F52299897200326D18 /* NumpadViewController.swift in Sources */,
 				13906E89228E514600E1B397 /* LoadingViewController.swift in Sources */,
 				1341B210229565AB00CC7271 /* Checkmark.swift in Sources */,
 				13906E91228F00E600E1B397 /* LoadingOverlayView.swift in Sources */,

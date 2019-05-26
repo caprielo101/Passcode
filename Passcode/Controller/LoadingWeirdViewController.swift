@@ -144,10 +144,10 @@ class LoadingWeirdViewController: UIViewController {
         //present the next vc
         let nextVC = SwitchesViewController()
         nextVC.modalTransitionStyle = .crossDissolve
+        present(nextVC, animated: true, completion: nil)
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.prepare()
         generator.impactOccurred()
-        present(nextVC, animated: true, completion: nil)
     }
     
     func ShowLoadingOverlay() {

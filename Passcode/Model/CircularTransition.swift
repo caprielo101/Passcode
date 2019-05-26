@@ -9,7 +9,7 @@
 import UIKit
 
 class CircularTransition: NSObject {
-
+    
     var circle = UIView()
     
     var startingPoint = CGPoint.zero {
@@ -65,8 +65,8 @@ extension CircularTransition:UIViewControllerAnimatedTransitioning {
                     presentedView.alpha = 1
                     presentedView.center = viewCenter
                     
-                    }, completion: { (success:Bool) in
-                        transitionContext.completeTransition(success)
+                }, completion: { (success:Bool) in
+                    transitionContext.completeTransition(success)
                 })
             }
             
@@ -94,25 +94,18 @@ extension CircularTransition:UIViewControllerAnimatedTransitioning {
                         containerView.insertSubview(self.circle, belowSubview: returningView)
                     }
                     
+                }, completion: { (success:Bool) in
+                    returningView.center = viewCenter
+                    returningView.removeFromSuperview()
                     
-                    }, completion: { (success:Bool) in
-                        returningView.center = viewCenter
-                        returningView.removeFromSuperview()
-                        
-                        self.circle.removeFromSuperview()
-                        
-                        transitionContext.completeTransition(success)
-                        
+                    self.circle.removeFromSuperview()
+                    
+                    transitionContext.completeTransition(success)
+             
                 })
-                
             }
-            
-            
         }
-        
     }
-    
-    
     
     func frameForCircle (withViewCenter viewCenter:CGPoint, size viewSize:CGSize, startPoint:CGPoint) -> CGRect {
         let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
@@ -122,17 +115,6 @@ extension CircularTransition:UIViewControllerAnimatedTransitioning {
         let size = CGSize(width: offestVector, height: offestVector)
         
         return CGRect(origin: CGPoint.zero, size: size)
-    
+        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }

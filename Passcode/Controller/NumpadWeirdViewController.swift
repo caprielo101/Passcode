@@ -104,11 +104,10 @@ class NumpadWeirdViewController: UIViewController {
             if input1.text != nil && input2.text != nil && input3.text != nil && input4.text != nil {
                 if completed {
                     //present the loading weird view controller
-//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                    let presentedLoadingScreen = storyboard.instantiateViewController(withIdentifier: "LoadingWeirdViewController")
                     let presentedLoadingScreen = LoadingWeirdViewController()
                     presentedLoadingScreen.modalPresentationStyle = .overCurrentContext
                     self.present(presentedLoadingScreen,animated: false, completion: nil)
+
                     //Play click sound from sound library
                     AudioServicesPlaySystemSound(1104)
                     print(completed)
@@ -170,6 +169,7 @@ class NumpadWeirdViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "PopUpAdsViewController")
         present(nextVC, animated: true, completion: nil)
+//        performSegue(withIdentifier: "goToPopUp", sender: self)
         submitButton.backgroundColor = .higGreen
         submitButton.tintColor = .black
         clearButton.isEnabled = true

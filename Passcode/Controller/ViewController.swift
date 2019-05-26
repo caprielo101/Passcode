@@ -36,9 +36,12 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .black
         
-        for button in numpadButtons {
-            button.setTitle("", for: .normal)
+        if let buttons = numpadButtons {
+            for button in buttons {
+                button.setTitle("", for: .normal)
+            }
         }
+
         
         setupInputs()
         
@@ -55,27 +58,33 @@ class ViewController: UIViewController {
     }
     
     fileprivate func setupClearAndSubmit() {
-        clearButton.setTitle("", for: .normal)
-        clearButton.transform = CGAffineTransform(rotationAngle: 0)
-        clearButton.contentMode = .center
-        clearButton.setImage(UIImage(named: "refresh.png"), for: .normal)
-        clearButton.backgroundColor = .init(r: 164, g: 164, b: 164)
-        clearButton.tintColor = .init(r: 18, g: 18, b: 18)
-        submitButton.setTitle("", for: .normal)
-        submitButton.contentMode = .center
-        submitButton.setImage(UIImage(named: "chevron.png"), for: .normal)
-        submitButton.tintColor = .white
-        submitButton.backgroundColor = .init(r: 61, g: 57, b: 63)
+        if let clear = clearButton {
+            clear.setTitle("", for: .normal)
+            clear.transform = CGAffineTransform(rotationAngle: 0)
+            clear.contentMode = .center
+            clear.setImage(UIImage(named: "refresh.png"), for: .normal)
+            clear.backgroundColor = .init(r: 164, g: 164, b: 164)
+            clear.tintColor = .init(r: 18, g: 18, b: 18)
+        }
+        if let submit = submitButton {
+            submit.setTitle("", for: .normal)
+            submit.contentMode = .center
+            submit.setImage(UIImage(named: "chevron.png"), for: .normal)
+            submit.tintColor = .white
+            submit.backgroundColor = .init(r: 61, g: 57, b: 63)
+        }
     }
     
     func setupInputs() {
-
-        for input in PasscodeInputs {
-            input.textColor = .white
-            input.text = nil
-            input.addBottomBorder()
-            input.layer.removeAllAnimations()
+        if let inputs = PasscodeInputs {
+            for input in inputs {
+                input.textColor = .white
+                input.text = nil
+                input.addBottomBorder()
+                input.layer.removeAllAnimations()
+            }
         }
+
         setupClearAndSubmit()
     }
     
@@ -147,17 +156,31 @@ class ViewController: UIViewController {
     }
     
     func animationChecker() {
-        if input1.text == nil {
-            input1.flashAnimate()
-        } else if input2.text == nil {
-            input2.flashAnimate()
-        } else if input3.text == nil {
-            input3.flashAnimate()
-        } else if input4.text == nil {
-            input4.flashAnimate()
-        } else {
-            //Animate
+        if let input_1 = input1 {
+            if input_1.text == nil {
+                input_1.flashAnimate()
+            } else if let input_2 = input2 {
+                if input_2.text == nil {
+                    input_2.flashAnimate()
+                } else if let input_3 = input3 {
+                    if input_3.text == nil {
+                        input_3.flashAnimate()
+                    } 
+                }
+            }
         }
+//
+//        if input1.text == nil {
+//            input1.flashAnimate()
+//        } else if input2.text == nil {
+//            input2.flashAnimate()
+//        } else if input3.text == nil {
+//            input3.flashAnimate()
+//        } else if input4.text == nil {
+//            input4.flashAnimate()
+//        } else {
+//            //Animate
+//        }
     }
     
     func readyToSubmit() {
