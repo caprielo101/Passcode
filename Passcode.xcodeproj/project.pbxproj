@@ -62,7 +62,6 @@
 		13BEE7C42291A2A9001DA6EC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEE7C32291A2A9001DA6EC /* UIView+Extension.swift */; };
 		13BEE7C62291A67C001DA6EC /* RandomGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */; };
 		13C281F52299897200326D18 /* NumpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C281F42299897200326D18 /* NumpadViewController.swift */; };
-		13D52787229ACD3200E2B799 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D52786229ACD3200E2B799 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,7 +122,6 @@
 		13BEE7C32291A2A9001DA6EC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGameViewController.swift; sourceTree = "<group>"; };
 		13C281F42299897200326D18 /* NumpadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadViewController.swift; sourceTree = "<group>"; };
-		13D52786229ACD3200E2B799 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +160,6 @@
 				13016CEB22900B100004F9DF /* BlackViewController.swift */,
 				13BEE7C52291A67C001DA6EC /* RandomGameViewController.swift */,
 				13016CEF2290609D0004F9DF /* CompareViewController.swift */,
-				13D52786229ACD3200E2B799 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -371,7 +368,6 @@
 				1341B2122295721E00CC7271 /* PopUpAdsViewController.swift in Sources */,
 				1341B2082295055000CC7271 /* PlayButton.swift in Sources */,
 				13016CEC22900B100004F9DF /* BlackViewController.swift in Sources */,
-				13D52787229ACD3200E2B799 /* ViewController.swift in Sources */,
 				13016CE6228FF6190004F9DF /* SwitchesViewController.swift in Sources */,
 				13016CF02290609D0004F9DF /* CompareViewController.swift in Sources */,
 				13A657E3228C484E009DB3DD /* NumpadButton.swift in Sources */,
